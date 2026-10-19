@@ -1,0 +1,1879 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Книжная гостиная — скорочтение и тренировка мозга</title>
+  <meta name="description" content="Курс скорочтения, тренажёры для внимания и памяти: таблица Шульте, тест скорости чтения, ребусы, карточки, логика, нейрогимнастика и Струп-тест.">
+  <meta property="og:title" content="Книжная гостиная — скорочтение и тренировка мозга">
+  <meta property="og:description" content="Читайте быстрее. Понимайте глубже. По 10 минут в день.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FFF5F7">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4708F'%3E%3Cpath d='M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;700;800&subset=cyrillic&display=swap">
+  <style>
+:root{
+  --bg:#FFF5F7; --powder:#FCE4EC; --surface:#FFFFFF; --line:#F0D3DC;
+  --rose:#D4708F; --accent:#A8476A; --accent-hover:#8C3757; --on-accent:#FFFFFF;
+  --fg:#3E2A2F; --muted:#7A6266; --gold:#C9A227; --gold-text:#7A5F0C;
+  --ok:#2F7A4A; --err:#B3261E; --ok-bg:#E3F2E8; --err-bg:#FBE4E2;
+  --shadow:0 2px 10px rgba(62,42,47,.08);
+  --display:"Lora",Georgia,"Times New Roman",serif;
+  --ui:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#2A1E22; --powder:#3A2A30; --surface:#3A2A30; --line:#55404A;
+  --rose:#E48AA6; --accent:#E48AA6; --accent-hover:#F0A6BD; --on-accent:#2A1E22;
+  --fg:#F7E8EC; --muted:#C9AEB6; --gold:#C9A227; --gold-text:#C9A227;
+  --ok:#8CC09D; --err:#F2938B; --ok-bg:#24392B; --err-bg:#4A2522;
+  --shadow:0 2px 10px rgba(0,0,0,.3); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#2A1E22; --powder:#3A2A30; --surface:#3A2A30; --line:#55404A;
+  --rose:#E48AA6; --accent:#E48AA6; --accent-hover:#F0A6BD; --on-accent:#2A1E22;
+  --fg:#F7E8EC; --muted:#C9AEB6; --gold:#C9A227; --gold-text:#C9A227;
+  --ok:#8CC09D; --err:#F2938B; --ok-bg:#24392B; --err-bg:#4A2522;
+  --shadow:0 2px 10px rgba(0,0,0,.3); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ui);font-size:16px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--accent)}
+a:hover{color:var(--accent-hover)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0 0 .5em}
+h1{font-size:clamp(30px,5vw,46px)}
+h2{font-size:clamp(22px,3vw,30px)}
+h3{font-size:20px}
+p{margin:0 0 1em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.container{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+.narrow{max-width:760px}
+.muted{color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:8px;background:var(--surface);padding:8px 12px;z-index:100}
+
+/* Header */
+.site-header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.header-row{display:flex;align-items:center;gap:16px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:21px;font-weight:600;color:var(--fg);text-decoration:none}
+.logo svg{color:var(--rose)}
+.nav{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav a{color:var(--fg);text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:8px}
+.nav a:hover,.nav a[aria-current="page"]{background:var(--powder);color:var(--accent)}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--fg);border-radius:10px;width:44px;height:44px;display:inline-grid;place-items:center;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+.menu-btn{display:none}
+@media (max-width:860px){
+  .menu-btn{display:inline-grid;margin-left:auto}
+  .nav{display:none;position:absolute;left:0;right:0;top:64px;background:var(--bg);flex-direction:column;align-items:stretch;padding:8px 16px 16px;border-bottom:1px solid var(--line);margin:0}
+  .nav.open{display:flex}
+  .nav a{padding:12px}
+}
+
+main{flex:1;padding:32px 0 64px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 20px;border-radius:12px;border:2px solid var(--accent);background:var(--accent);color:var(--on-accent);font:inherit;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--powder);color:var(--accent-hover)}
+.btn.small{min-height:36px;padding:6px 14px;font-size:14px;border-radius:10px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* Cards and grids */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card.powder{background:var(--powder);box-shadow:none}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+a.card{text-decoration:none;color:var(--fg);display:flex;flex-direction:column;gap:8px;transition:transform .15s,border-color .15s}
+a.card:hover{transform:translateY(-2px);border-color:var(--rose);color:var(--fg)}
+.card .ico{color:var(--rose);width:40px;height:40px}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--powder);color:var(--fg);border:1px solid var(--line)}
+button.tag{cursor:pointer;font-family:inherit}
+button.tag[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.meta{font-size:14px;color:var(--muted)}
+.section{margin-top:56px}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.ribbon{height:14px;margin:48px auto;max-width:240px;background:linear-gradient(90deg,transparent,var(--rose) 20%,var(--rose) 80%,transparent);mask:radial-gradient(circle at 50% 50%,#000 3px,transparent 4px) center/14px 14px repeat-x,linear-gradient(#000,#000) center/100% 2px no-repeat;-webkit-mask:radial-gradient(circle at 50% 50%,#000 3px,transparent 4px) center/14px 14px repeat-x,linear-gradient(#000,#000) center/100% 2px no-repeat}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:24px 0}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:52ch}
+.hero-art{color:var(--rose)}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.hero-art{max-width:300px;margin:0 auto;order:-1}}
+.streak{display:inline-flex;gap:8px;align-items:center;font-weight:700;color:var(--gold-text);background:var(--powder);border-radius:99px;padding:6px 14px;margin-bottom:16px}
+.steps{counter-reset:s}
+.step{position:relative;padding-top:56px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:16px;left:20px;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-family:var(--display)}
+.step h3{margin-top:8px}
+
+/* Article / prose */
+.prose{font-family:var(--display);font-size:18px;line-height:1.7;max-width:68ch}
+.prose h2{margin-top:1.6em;font-size:26px}
+.prose h3{margin-top:1.3em}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li{margin-bottom:.4em}
+.prose blockquote{margin:1.2em 0;padding:12px 20px;border-left:4px solid var(--rose);background:var(--powder);border-radius:0 12px 12px 0}
+.toc{background:var(--powder);border-radius:16px;padding:16px 20px;margin:24px 0}
+.toc ol{margin:8px 0 0;padding-left:20px}
+.toc a{text-decoration:none}
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:40px;align-items:start}
+.article-layout .toc{position:sticky;top:88px;margin:0}
+@media (max-width:900px){.article-layout{grid-template-columns:1fr}.article-layout .toc{position:static;order:-1}}
+.cover{aspect-ratio:16/7;border-radius:16px;display:grid;place-items:center;color:var(--rose);background:var(--powder);margin-bottom:24px;overflow:hidden}
+.cover svg{width:110px;height:110px}
+.thumb{aspect-ratio:16/9;border-radius:12px;background:var(--powder);display:grid;place-items:center;color:var(--rose)}
+.thumb svg{width:56px;height:56px}
+.breadcrumbs{font-size:14px;color:var(--muted);margin-bottom:16px}
+.breadcrumbs a{color:var(--muted)}
+
+/* Course */
+.progress{height:10px;background:var(--powder);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.progress>i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
+.lesson-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.lesson-item{display:flex;gap:16px;align-items:center;text-decoration:none;color:var(--fg)}
+.lesson-num{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;background:var(--powder);color:var(--accent);border:2px solid var(--line)}
+.lesson-item.done .lesson-num{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.lesson-item.next{border-color:var(--accent);border-width:2px}
+.badge-next{font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent);border-radius:99px;padding:2px 10px;margin-left:auto;white-space:nowrap}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;flex-wrap:wrap}
+
+/* Trainers (clean, no decor) */
+.trainer{max-width:820px;margin:0 auto}
+.trainer-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:16px 0}
+.howto{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:16px}
+.howto summary{cursor:pointer;padding:12px 16px;font-weight:700}
+.howto div{padding:0 16px 12px}
+.options{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+.field{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600}
+.field select,.field input[type=text],.field input[type=number],.field input[type=email],.field input[type=password],.field input[type=time]{font:inherit;font-size:16px;min-height:44px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.check{display:flex;gap:8px;align-items:center;font-size:15px;min-height:44px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+.stage-box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;min-height:200px;position:relative}
+.hud{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;font-size:18px;font-weight:700;margin-bottom:16px;font-variant-numeric:tabular-nums}
+.hud span{color:var(--muted);font-weight:600;font-size:14px;display:block;text-align:center}
+.paused{position:absolute;inset:0;background:var(--surface);border-radius:16px;display:grid;place-items:center;font-size:22px;font-weight:700;z-index:2}
+
+.schulte{display:grid;gap:6px;margin:0 auto;max-width:520px;position:relative}
+.schulte button{aspect-ratio:1;min-width:44px;min-height:44px;font:inherit;font-weight:700;font-size:clamp(16px,4.5vw,28px);border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-variant-numeric:tabular-nums}
+.schulte button:hover{border-color:var(--accent)}
+.schulte button.found{opacity:.35}
+.schulte button.red{color:var(--err);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.schulte button.black{color:var(--fg)}
+.schulte button.flash{background:var(--err-bg);border-color:var(--err)}
+.schulte .dot{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--accent);pointer-events:none}
+.next-hint{text-align:center;font-size:20px;margin-bottom:12px}
+.next-hint b{font-size:28px;color:var(--accent)}
+
+.result{text-align:center;padding:12px}
+.result .big{font-family:var(--display);font-size:48px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.1}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
+.result-grid div{background:var(--powder);border-radius:12px;padding:12px}
+.result-grid b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+.guest-note{font-size:14px;color:var(--muted);margin-top:16px}
+
+.reading-text{font-family:var(--display);font-size:19px;line-height:1.75;max-width:66ch;margin:0 auto}
+.quiz-q{margin-bottom:20px}
+.quiz-q fieldset{border:none;padding:0;margin:0}
+.quiz-q legend{font-weight:700;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;cursor:pointer;min-height:44px;background:var(--bg)}
+.opt input{accent-color:var(--accent);width:18px;height:18px}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--err);background:var(--err-bg)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:520px;margin:0 auto}
+.choice-grid .btn{width:100%}
+.feedback{text-align:center;min-height:28px;font-weight:700;margin-top:12px}
+.feedback.ok{color:var(--ok)}.feedback.bad{color:var(--err)}
+
+.rebus{font-family:var(--display);font-size:clamp(40px,10vw,72px);font-weight:600;text-align:center;letter-spacing:.04em;padding:24px 0;color:var(--fg)}
+.flip{perspective:1000px;max-width:460px;margin:0 auto;cursor:pointer}
+.flip-inner{position:relative;min-height:220px;transition:transform .5s;transform-style:preserve-3d}
+.flip.on .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;display:grid;place-items:center;text-align:center;padding:24px;border-radius:16px;border:1px solid var(--line);background:var(--bg);font-size:22px;font-weight:700}
+.flip-face.back{transform:rotateY(180deg);background:var(--powder);font-weight:600;font-size:19px}
+.pairs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.pairs button{min-height:84px;font:inherit;font-size:14px;font-weight:600;border-radius:12px;border:1px solid var(--line);background:var(--accent);color:var(--on-accent);cursor:pointer;padding:6px}
+.pairs button.open{background:var(--bg);color:var(--fg)}
+.pairs button.matched{background:var(--ok-bg);color:var(--fg);border-color:var(--ok);cursor:default}
+@media (max-width:560px){.pairs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.stroop-word{font-size:clamp(44px,12vw,80px);font-weight:800;text-align:center;padding:24px 0;letter-spacing:.02em}
+.dir-box{display:grid;place-items:center;padding:16px}
+.dir-box svg{width:200px;height:120px}
+.metronome-dot{width:24px;height:24px;border-radius:50%;background:var(--line);margin:0 auto;transition:background .05s}
+.metronome-dot.on{background:var(--accent)}
+.neuro-steps{font-size:18px}
+.neuro-steps li{margin-bottom:6px}
+.neuro-steps li.active{color:var(--accent);font-weight:700}
+
+/* Cabinet */
+.stat-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.stat-tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stat-tile b{display:block;font-family:var(--display);font-size:32px;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat-tile span{color:var(--muted);font-size:14px}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-size:12px;font-family:var(--ui)}
+.chart .gridline{stroke:var(--line)}
+.chart .line{stroke:var(--accent);stroke-width:2.5;fill:none}
+.chart .pt{fill:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:13px;color:var(--muted);font-weight:700}
+td{font-variant-numeric:tabular-nums}
+.table-wrap{overflow-x:auto}
+.ach{display:flex;gap:12px;align-items:center}
+.ach-ico{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#3E2A2F}
+.ach.locked{opacity:.55}
+.ach.locked .ach-ico{background:var(--line);color:var(--muted)}
+.ach small{color:var(--gold-text);font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tabs a{text-decoration:none;font-weight:700;padding:8px 16px;border-radius:99px;border:1px solid var(--line);color:var(--fg)}
+.tabs a[aria-current="page"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:12px 20px;border-radius:12px;font-weight:600;z-index:50;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;z-index:40}
+
+/* Footer */
+.site-footer{background:var(--powder);border-top:1px solid var(--line);padding:40px 0 24px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
+.footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.footer-grid a{color:var(--fg);text-decoration:none}
+.footer-grid a:hover{color:var(--accent);text-decoration:underline}
+.footer-grid h4{margin:0 0 10px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+
+</style>
+  <script>
+    /* Тема до отрисовки, чтобы не мигало */
+    try { var t = JSON.parse(localStorage.getItem("kg-state-v1") || "{}").theme; if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <noscript>Для работы тренажёров включите JavaScript.</noscript>
+  <script>
+/* Контент сайта. В продакшене — из CMS (PRD 6.7); здесь — статические данные. */
+window.KG = window.KG || {};
+
+KG.TAGS = ["скорочтение", "память", "внимание", "нейрогимнастика", "книги"];
+
+KG.TRAINERS = [
+  { slug: "shulte", title: "Таблица Шульте", desc: "Расширяет поле зрения и тренирует внимание.", time: "2–5 мин", icon: "grid" },
+  { slug: "skorost", title: "Тест скорости чтения", desc: "Слова в минуту, понимание и эффективная скорость.", time: "5–7 мин", icon: "book" },
+  { slug: "rebusy", title: "Ребусы", desc: "Разгадайте слово, зашифрованное буквами и цифрами.", time: "3–5 мин", icon: "puzzle" },
+  { slug: "kartochki", title: "Тематические карточки", desc: "Писатели, термины и слова: изучение, проверка, пары.", time: "5–10 мин", icon: "cards" },
+  { slug: "logika", title: "Логические задачи", desc: "Последовательности, «найди лишнее» и устный счёт.", time: "3–10 мин", icon: "brain" },
+  { slug: "neiro", title: "Нейрогимнастика", desc: "Упражнения для координации полушарий с метрономом.", time: "3–5 мин", icon: "hand" },
+  { slug: "strup", title: "Струп-тест", desc: "Назовите цвет шрифта, а не слово. Гибкость внимания.", time: "1–2 мин", icon: "palette" }
+];
+
+KG.ARTICLES = [
+  {
+    slug: "pochemu-my-chitaem-medlenno", title: "Почему мы читаем медленно: пять привычек из школы",
+    tags: ["скорочтение", "внимание"], date: "2026-10-12", icon: "book",
+    excerpt: "Проговаривание, возвраты к прочитанному и узкое поле зрения. Разбираем, откуда берутся привычки и что с ними делать.",
+    body: [
+      ["h2", "Привычка 1. Проговаривание про себя"],
+      ["p", "В первом классе нас учат читать вслух, и мозг привыкает связывать каждое слово со звуком. Даже когда мы читаем молча, гортань едва заметно повторяет слова. Это ограничивает скорость темпом речи: около 150–200 слов в минуту."],
+      ["p", "Полностью отключить внутренний голос не нужно и не получится. Но его можно сократить: читать блоками по 2–3 слова, слегка ускорять темп указкой, напевать про себя простой ритм во время тренировки."],
+      ["h2", "Привычка 2. Возвраты к прочитанному"],
+      ["p", "Регрессия — это возврат глаз к уже прочитанной строке. Часть возвратов полезна, когда текст действительно сложный. Но большинство из них — следствие рассеянного внимания: мы «пролистали» строку взглядом, не думая о смысле."],
+      ["p", "Помогает указка: палец, ручка или карточка, которая закрывает уже прочитанные строки. Попробуйте прочитать страницу так — возвращаться станет физически неудобно, и внимание соберётся."],
+      ["h2", "Привычка 3. Узкое поле зрения"],
+      ["p", "Глаз за одну фиксацию видит не одно слово, а несколько. Если тренировать периферийное зрение, за одну остановку взгляда можно охватить 3–4 слова вместо одного. Для этого и существует таблица Шульте."],
+      ["h2", "Привычка 4. Чтение без цели"],
+      ["p", "Перед чтением спросите себя: зачем я открываю этот текст? Найти конкретный факт, понять общую идею или разобраться в деталях — для каждой цели подходит своя скорость."],
+      ["h2", "Привычка 5. Чтение в шуме"],
+      ["p", "Уведомления, переключение вкладок и фоновые разговоры съедают концентрацию. Двадцать минут тихого чтения дают больше, чем час урывками."],
+      ["quote", "Скорость чтения — не цель, а побочный эффект внимательного чтения."]
+    ]
+  },
+  {
+    slug: "tablica-shulte-kak-zanimatsya", title: "Таблица Шульте: как заниматься, чтобы был результат",
+    tags: ["скорочтение", "внимание"], date: "2026-10-05", icon: "grid",
+    excerpt: "Главное правило: смотреть в центр, а не бегать глазами. Рассказываем о режимах и нормах времени.",
+    body: [
+      ["h2", "Что тренирует таблица"],
+      ["p", "Таблица Шульте развивает периферийное зрение, скорость поиска и устойчивость внимания. Чем шире поле зрения, тем больше слов вы видите за одну фиксацию взгляда при чтении."],
+      ["h2", "Главное правило"],
+      ["p", "Держите взгляд в центре таблицы и ищите числа боковым зрением. Сначала это медленнее, чем водить глазами по клеткам, но именно так тренируется нужный навык. Включите точку фиксации в настройках — она подскажет, куда смотреть."],
+      ["h2", "С чего начать"],
+      ["ul", ["Начните с таблицы 5×5 — это классический размер.", "Если поиск занимает больше минуты, перейдите на 4×4.", "Хороший результат для 5×5 — 25–35 секунд; отличный — до 20 секунд.", "Заниматься лучше 5 минут ежедневно, чем полчаса раз в неделю."]],
+      ["h2", "Шульте–Горбова"],
+      ["p", "Двухцветный вариант усложняет задачу: нужно чередовать чёрные числа по возрастанию и красные по убыванию. Он тренирует переключение внимания и рабочую память."]
+    ]
+  },
+  {
+    slug: "kak-zapominat-prochitannoe", title: "Как запоминать прочитанное: интервальное повторение",
+    tags: ["память", "книги"], date: "2026-09-28", icon: "brain",
+    excerpt: "Почему мы забываем 70% книги за неделю и как удержать главное с помощью пересказа и карточек.",
+    body: [
+      ["h2", "Кривая забывания"],
+      ["p", "Без повторения большая часть новой информации забывается в первые сутки. Хорошая новость: каждое повторение замедляет забывание, и следующий интервал можно делать длиннее."],
+      ["h2", "Пересказ за 60 секунд"],
+      ["p", "Закрыв главу, перескажите её вслух за одну минуту. Ограничение по времени заставляет выделить главное. Если не получается — это сигнал, что глава прочитана поверхностно."],
+      ["h2", "Карточки и система Лейтнера"],
+      ["p", "Выпишите ключевые идеи на карточки: вопрос на лицевой стороне, ответ на обороте. Разложите их по пяти коробкам. Правильный ответ переносит карточку в следующую коробку, ошибка возвращает в первую. Первую коробку повторяйте каждый день, пятую — раз в пару недель."],
+      ["p", "В разделе «Тематические карточки» эта система работает автоматически."]
+    ]
+  },
+  {
+    slug: "neirogimnastika-pered-chteniem", title: "Нейрогимнастика перед чтением: три минуты для фокуса",
+    tags: ["нейрогимнастика", "внимание"], date: "2026-09-20", icon: "hand",
+    excerpt: "Простые упражнения на координацию помогают переключиться с суеты на сосредоточенное чтение.",
+    body: [
+      ["h2", "Зачем это нужно"],
+      ["p", "Упражнения, где руки выполняют разные движения, требуют координации и полного внимания. Три минуты такой разминки работают как ритуал: мозг понимает, что пора сосредоточиться."],
+      ["h2", "Комплекс «Перед чтением»"],
+      ["ol", ["«Кулак–ребро–ладонь» — 1 минута.", "«Ухо–нос» — 1 минута.", "«Ленивые восьмёрки» глазами — 1 минута."]],
+      ["p", "Комплекс доступен в разделе нейрогимнастики с метрономом и таймером."],
+      ["quote", "Если упражнение получается легко — увеличьте темп метронома."]
+    ]
+  },
+  {
+    slug: "kak-vybrat-knigu", title: "Как выбрать книгу и не бросить её на 30-й странице",
+    tags: ["книги"], date: "2026-09-14", icon: "cup",
+    excerpt: "Предварительный просмотр за 10 минут: оглавление, аннотация, первая и последняя главы.",
+    body: [
+      ["h2", "Просмотр за 10 минут"],
+      ["p", "Перед покупкой или чтением пролистайте книгу: прочитайте аннотацию, оглавление, введение и выводы последней главы. Так вы поймёте, отвечает ли книга на ваш вопрос."],
+      ["h2", "Правило 50 страниц"],
+      ["p", "Если через 50 страниц книга не увлекла — её можно отложить без чувства вины. Время чтения ограничено, и лучше потратить его на книгу, которая работает для вас."],
+      ["h2", "Чередуйте жанры"],
+      ["p", "После сложной нон-фикшн книги возьмите лёгкий роман. Чередование помогает сохранить привычку читать каждый день."]
+    ]
+  },
+  {
+    slug: "chtenie-blokami", title: "Чтение блоками: видеть фразы, а не слова",
+    tags: ["скорочтение"], date: "2026-09-07", icon: "eye",
+    excerpt: "Упражнение, которое переводит чтение с уровня слов на уровень смысловых групп.",
+    body: [
+      ["h2", "Как это работает"],
+      ["p", "Опытный читатель воспринимает не отдельные слова, а смысловые группы: «в старом доме», «на краю поля». За одну фиксацию взгляда схватывается целая фраза."],
+      ["h2", "Упражнение"],
+      ["p", "Возьмите газетную колонку или узкий столбец текста. Проведите вертикальную линию по центру. Читайте, двигая взгляд только по линии сверху вниз и стараясь видеть края строки боковым зрением."],
+      ["p", "Через неделю ежедневной практики по 5 минут колонка начнёт читаться заметно быстрее."]
+    ]
+  }
+];
+
+KG.HOWTO = [
+  { id: "podgotovka", title: "Подготовка", body: [
+    ["p", "Хорошее чтение начинается до первой страницы. Выберите место, где вас не будут отвлекать: удобное кресло, стол, свет падает сбоку и не бликует на странице."],
+    ["ul", ["Свет: мягкий, без резких теней; для бумажной книги — лампа слева для правшей.", "Поза: спина опирается, книга на расстоянии 35–45 см от глаз.", "Телефон: в беззвучном режиме и вне поля зрения.", "Вода или чай под рукой, чтобы не вставать."]]
+  ]},
+  { id: "prosmotr", title: "Предварительный просмотр книги", body: [
+    ["p", "Потратьте 5–10 минут на знакомство с книгой: прочитайте аннотацию, оглавление, предисловие и выводы в конце глав. Сформулируйте 2–3 вопроса, на которые хотите получить ответ."],
+    ["p", "Такой просмотр создаёт «каркас», на который потом ложатся детали, и чтение становится быстрее и осмысленнее."]
+  ]},
+  { id: "aktivnoe", title: "Активное чтение", body: [
+    ["ul", ["Задавайте вопросы к тексту: что автор утверждает и чем это доказывает?", "Делайте пометки на полях или в заметках: «!» — важно, «?» — спорно, «→» — применить.", "Ставьте закладки на страницах, к которым захочется вернуться.", "После каждой главы останавливайтесь на минуту и вспоминайте главное."]]
+  ]},
+  { id: "konspekt", title: "Методы конспектирования", body: [
+    ["h3", "Ментальная карта"],
+    ["p", "В центре листа — тема книги, от неё ветви к главным идеям, от них — к деталям. Подходит для визуалов и книг со сложной структурой."],
+    ["h3", "Метод Корнелла"],
+    ["p", "Лист делится на три части: широкая колонка для заметок, узкая слева — для ключевых вопросов, внизу — краткое резюме страницы."],
+    ["h3", "Выписки"],
+    ["p", "Цитаты и мысли с номером страницы. Полезно добавлять к каждой выписке одну строку своими словами: как это связано с вашей жизнью или работой."]
+  ]},
+  { id: "zakreplenie", title: "Как закреплять прочитанное", body: [
+    ["ul", ["Перескажите главу за 60 секунд сразу после чтения.", "Повторите конспект через день, через неделю и через месяц.", "Расскажите о книге другу — объяснение лучше всего проверяет понимание.", "Превратите ключевые идеи в карточки и повторяйте по системе Лейтнера."]],
+    ["quote", "Прочитать книгу — половина дела. Вторая половина — вернуться к ней через неделю."]
+  ]}
+];
+
+KG.LESSONS = [
+  { n: 1, slug: "chto-meshaet", title: "Что мешает читать быстро", trainer: "skorost", task: "Пройдите входной тест скорости чтения — это ваша точка отсчёта.",
+    body: [["p", "Средний взрослый читает 180–250 слов в минуту. Причина не в способностях, а в привычках, сформированных в начальной школе: проговаривание, возвраты, чтение по одному слову и рассеянное внимание."],
+           ["p", "В этом курсе мы разберём каждую привычку и потренируем навыки, которые её заменяют. Но сначала измерим исходную скорость: без этого невозможно увидеть прогресс."],
+           ["quote", "Важна не только скорость, но и понимание. Курс отслеживает эффективную скорость: слова в минуту, умноженные на процент понимания."]] },
+  { n: 2, slug: "subvokalizaciya", title: "Подавление проговаривания", trainer: "shulte", task: "Пройдите таблицу Шульте 4×4, стараясь не называть числа про себя.",
+    body: [["p", "Субвокализация — это внутреннее проговаривание слов. Она ограничивает скорость чтения темпом речи. Полностью её убрать нельзя, но можно ослабить."],
+           ["ul", ["Читайте под мысленный счёт «раз-два-три», не совпадающий со словами.", "Слегка сжимайте губы и язык во время чтения.", "Читайте блоками по 2–3 слова, а не по одному."]]] },
+  { n: 3, slug: "regressii", title: "Регрессии и как от них избавиться", trainer: "skorost", task: "Прочитайте текст теста, используя указку — палец или ручку.",
+    body: [["p", "Регрессия — возврат взгляда к уже прочитанному. Он отнимает до трети времени чтения и чаще всего не нужен."],
+           ["p", "Главный инструмент против регрессий — указка. Ведите её под строкой чуть быстрее комфортного темпа: взгляд будет следовать за ней, а не прыгать назад."]] },
+  { n: 4, slug: "pole-zreniya", title: "Расширение поля зрения", trainer: "shulte", task: "Пройдите таблицу Шульте 5×5 с точкой фиксации в центре.",
+    body: [["p", "Чем больше слов вы охватываете одной фиксацией, тем меньше остановок делает взгляд на строке. Поле зрения тренируется таблицами Шульте и чтением узких колонок."],
+           ["p", "Смотрите в центр таблицы и находите числа боковым зрением. Не гонитесь за временем в первые дни: важна правильная техника."]] },
+  { n: 5, slug: "ukazka", title: "Работа с указкой", trainer: "skorost", task: "Пройдите тест скорости, ведя указку под строками.",
+    body: [["p", "Указка задаёт ритм и не даёт взгляду возвращаться. Начните с темпа, при котором понимаете текст, и каждый день немного ускоряйтесь."],
+           ["ul", ["Указка движется под строкой, а не по словам.", "Начинайте строку на 1–2 слова правее начала, заканчивайте на 1–2 слова раньше конца — края увидит периферия."]]] },
+  { n: 6, slug: "bloki", title: "Чтение блоками", trainer: "shulte", task: "Пройдите таблицу Шульте 6×6.",
+    body: [["p", "Объединяйте слова в смысловые группы: «на старой полке», «рядом с окном». Мозг понимает фразу целиком быстрее, чем по словам."],
+           ["p", "Упражнение: возьмите текст и разметьте карандашом группы по 2–4 слова. Прочитайте его несколько раз, фиксируя взгляд только на центре каждой группы."]] },
+  { n: 7, slug: "koncentraciya", title: "Концентрация внимания", trainer: "strup", task: "Пройдите Струп-тест без ошибок.",
+    body: [["p", "Скорость бесполезна, если внимание ускользает. Тренируйте способность удерживать фокус: короткими сессиями по 20–25 минут с перерывами."],
+           ["p", "Струп-тест тренирует подавление автоматической реакции — то же умение помогает не отвлекаться на посторонние мысли при чтении."]] },
+  { n: 8, slug: "pamyat", title: "Память и понимание", trainer: "kartochki", task: "Пройдите колоду карточек в режиме «Проверка».",
+    body: [["p", "После быстрого чтения важно закрепить главное. Делайте паузу после каждого раздела и формулируйте одну главную мысль."],
+           ["p", "Интервальное повторение переводит знания в долговременную память. Карточки на сайте используют систему Лейтнера."]] },
+  { n: 9, slug: "tipy-tekstov", title: "Чтение разных типов текстов", trainer: "logika", task: "Решите 5 логических задач.",
+    body: [["p", "Новостную статью можно просмотреть по диагонали, учебник — читать с конспектом, роман — в комфортном темпе с удовольствием."],
+           ["ul", ["Просмотровое чтение — найти общую идею.", "Поисковое — найти конкретный факт.", "Изучающее — понять и запомнить детали."]]] },
+  { n: 10, slug: "podderzhanie", title: "Поддержание навыка", trainer: "skorost", task: "Пройдите итоговый тест скорости и сравните с входным.",
+    body: [["p", "Навык скорочтения сохраняется при регулярной практике. Достаточно 10–15 минут тренировок в день и привычки читать каждый день."],
+           ["p", "Пройдите итоговый тест — сайт сравнит результат с входным и покажет прирост эффективной скорости."]] }
+];
+
+/* Тексты для теста скорости — собственные, написаны для проекта. */
+KG.SPEED_TEXTS = [
+  {
+    id: "t1", level: "лёгкий", title: "Библиотека на чердаке",
+    text: `Когда бабушка переехала к нам, вместе с ней приехали двенадцать коробок книг. Мама вздохнула и сказала, что в квартире нет ни одного свободного угла. Папа почесал затылок и предложил чердак. Так у нашего старого дома появилась библиотека.
+
+Чердак был пыльным и тёмным. Под крышей жили голуби, а в углу стоял сломанный велосипед, на котором никто не катался лет десять. Мы с братом целую субботу выносили мусор, мыли окно и подметали пол. Папа принёс доски и сделал полки вдоль стены, а мама повесила лампу с абажуром в мелкий цветочек.
+
+Бабушка руководила расстановкой. Она знала каждую книгу и помнила, где и когда её купила. Толстый словарь она привезла из института. Сборник сказок с потёртой обложкой подарил ей отец на десятый день рождения. А маленькую книжку стихов она нашла на скамейке в парке и сорок лет собиралась вернуть хозяину, но так и не узнала, кто он.
+
+Я думал, что библиотека будет скучной, но ошибался. Каждый вечер после уроков я поднимался по скрипучей лестнице и выбирал книгу. Сначала брал только тонкие и с картинками. Потом бабушка дала мне роман о моряках, и я читал его три дня, забыв про компьютер и футбол.
+
+Бабушка придумала правило: прочитал книгу — расскажи о ней за ужином. Сначала рассказывать было трудно. Я путал имена героев и забывал, с чего всё началось. Бабушка не ругала, а задавала вопросы. Кто главный герой? Чего он хотел? Что ему мешало? Чем всё закончилось? Через месяц я рассказывал так, что брат просил не выдавать концовку.
+
+Зимой на чердаке было холодно, и папа принёс обогреватель. Бабушка поставила рядом старое кресло и плед. Иногда мы читали вдвоём: она — свою книгу, я — свою, и только страницы шуршали в тишине. Это было лучше любого кино.
+
+Весной к нам пришли соседские дети. Они услышали, что у нас есть библиотека, и попросили что-нибудь почитать. Бабушка завела тетрадь, куда записывала, кто и какую книгу взял. Скоро на чердак стали подниматься по пять-шесть человек в неделю. Мама перестала вздыхать и даже купила ещё одну полку.
+
+Прошло несколько лет. Бабушки больше нет с нами, но библиотека осталась. Тетрадь с записями лежит на верхней полке, рядом с книжкой стихов из парка. Я до сих пор поднимаюсь на чердак, когда хочу подумать. Сажусь в кресло, беру первую попавшуюся книгу и открываю её на случайной странице.
+
+Иногда мне кажется, что бабушка оставила нам не книги, а привычку. Привычку замедляться, слушать и задавать вопросы. И каждый раз, когда соседский малыш робко стучит в дверь и спрашивает, можно ли почитать про пиратов, я понимаю, что её библиотека всё ещё работает.`,
+    questions: [
+      { q: "Сколько коробок книг привезла бабушка?", o: ["Пять", "Двенадцать", "Двадцать", "Сорок"], a: 1 },
+      { q: "Где разместили библиотеку?", o: ["В гараже", "В подвале", "На чердаке", "В комнате брата"], a: 2 },
+      { q: "Какое правило придумала бабушка?", o: ["Читать по часу в день", "Рассказывать о прочитанной книге за ужином", "Не брать книги без спроса", "Читать только вслух"], a: 1 },
+      { q: "Что бабушка нашла на скамейке в парке?", o: ["Словарь", "Сборник сказок", "Книжку стихов", "Роман о моряках"], a: 2 },
+      { q: "Зачем бабушка завела тетрадь?", o: ["Для своих стихов", "Чтобы записывать, кто и какую книгу взял", "Для списка покупок", "Для конспектов внука"], a: 1 }
+    ]
+  },
+  {
+    id: "t2", level: "средний", title: "Как работает внимание",
+    text: `Каждую секунду наши органы чувств получают огромное количество сигналов. Глаза видят десятки предметов, уши слышат шум улицы, кожа ощущает ткань одежды и температуру воздуха. Если бы мозг обрабатывал всё это с одинаковой тщательностью, мы бы просто не смогли ничего делать. Поэтому существует внимание — механизм, который выбирает, что важно сейчас, а что можно отложить.
+
+Психологи различают несколько видов внимания. Непроизвольное внимание срабатывает само: резкий звук или яркая вспышка заставляют нас обернуться, даже если мы этого не хотели. Это древний механизм, который помогал нашим предкам замечать опасность. Произвольное внимание требует усилия: мы сами решаем сосредоточиться на скучном отчёте или трудной задаче. Именно оно быстро устаёт.
+
+Важное свойство внимания — объём. Классические эксперименты показывают, что человек способен одновременно удерживать в фокусе ограниченное число объектов, обычно от четырёх до семи. Когда объектов больше, часть из них выпадает из сознания. Поэтому так трудно читать, одновременно слушая разговор: два потока информации борются за одни и те же ресурсы.
+
+Ещё одно свойство — устойчивость. Даже опытный человек не может сосредоточенно работать несколько часов подряд без снижения качества. Исследования показывают, что внимание колеблется волнами: периоды высокой концентрации сменяются короткими провалами. Многие замечали, что во время чтения вдруг понимают: последние полстраницы глаза скользили по строкам, а мысли были где-то далеко.
+
+Третье свойство — переключаемость. Каждый раз, когда мы переходим от одной задачи к другой, мозгу нужно время, чтобы перестроиться. Учёные называют это ценой переключения. Если человек каждые пять минут проверяет почту, общее время работы заметно увеличивается, а количество ошибок растёт. При этом сам человек часто уверен, что работает эффективно.
+
+Что из этого следует для чтения? Во-первых, лучше читать короткими сессиями по двадцать–тридцать минут, а не пытаться осилить главу за один присест в любом состоянии. Во-вторых, нужно убрать источники непроизвольного внимания: телефон с уведомлениями, открытые вкладки, работающий телевизор. В-третьих, перед чтением полезно поставить цель. Когда мозг знает, что искать, он легче отсеивает лишнее.
+
+Хорошая новость в том, что внимание поддаётся тренировке. Упражнения на поиск объектов, такие как таблицы Шульте, развивают скорость и объём внимания. Задания, где нужно подавить автоматическую реакцию, например тест Струпа, тренируют контроль. Регулярное чтение длинных текстов без отвлечений само по себе укрепляет устойчивость.
+
+Не стоит ждать мгновенных результатов. Как и мышцы, внимание крепнет постепенно. Первые изменения обычно заметны через две-три недели ежедневной практики. Человек начинает замечать, что дольше удерживает мысль, реже теряет нить рассуждения и быстрее возвращается к работе после того, как его прервали. Эти небольшие изменения складываются в большой результат: чтение становится не только быстрее, но и приятнее.`,
+    questions: [
+      { q: "Какой вид внимания срабатывает сам, без усилия?", o: ["Произвольное", "Непроизвольное", "Устойчивое", "Распределённое"], a: 1 },
+      { q: "Сколько объектов обычно способен удерживать человек в фокусе?", o: ["1–2", "От 4 до 7", "10–12", "Около 20"], a: 1 },
+      { q: "Как называется время, нужное мозгу для перехода к другой задаче?", o: ["Цена переключения", "Порог внимания", "Окно фокуса", "Период отдыха"], a: 0 },
+      { q: "Какую длительность сессий чтения рекомендует текст?", o: ["5 минут", "20–30 минут", "Два часа", "Без перерыва до конца главы"], a: 1 },
+      { q: "Когда обычно заметны первые изменения от тренировок?", o: ["Сразу", "Через 2–3 дня", "Через 2–3 недели", "Через полгода"], a: 2 }
+    ]
+  },
+  {
+    id: "t3", level: "сложный", title: "Письменность и память культуры",
+    text: `Изобретение письменности принято считать одной из важнейших границ в истории человечества. До неё знания передавались устно: от старших к младшим, от рассказчика к слушателю. Такая передача была гибкой, но уязвимой. Каждое поколение невольно меняло историю, добавляя детали и забывая подробности, а со смертью носителя знания могли исчезнуть целые пласты опыта.
+
+Первые системы записи появились не для поэзии и не для философии, а для учёта. Древние писцы фиксировали количество зерна, скота и податей. Знаки обозначали конкретные предметы, и чтобы прочитать запись, нужно было знать, о каком хозяйстве идёт речь. Лишь постепенно, на протяжении столетий, знаки стали обозначать не только вещи, но и звуки, и это открыло возможность записать любое высказывание.
+
+Переход к звуковому письму имел глубокие последствия. Запись перестала зависеть от контекста: текст можно было унести в другой город и прочитать без пояснений автора. Знание впервые отделилось от человека. Философы древности относились к этому настороженно. Высказывалось опасение, что письмо ослабит память: люди будут полагаться на внешние знаки вместо того, чтобы помнить. Любопытно, что похожие споры ведутся и сегодня — только теперь речь идёт о поисковых системах и смартфонах.
+
+Однако история показала, что письменность скорее изменила память, чем уничтожила её. Освободившись от необходимости хранить всё в голове, люди получили возможность сравнивать тексты, замечать противоречия, накапливать комментарии. Возникла традиция толкования: один автор писал книгу, другой — разбор этой книги, третий спорил с обоими. Знание стало кумулятивным, то есть начало расти, опираясь на предыдущие достижения.
+
+Следующий перелом произошёл с распространением книгопечатания. Рукописная книга была дорогой и редкой; её переписывали неделями, и каждая копия содержала свои ошибки. Печатный станок сделал тексты дешёвыми и одинаковыми. Читатели в разных странах могли ссылаться на одну и ту же страницу. Появилась возможность массового образования, а вместе с ней — новый тип читателя, который читал много, быстро и про себя.
+
+Именно в эту эпоху чтение вслух уступает место чтению молча. Средневековый читатель, как правило, произносил текст хотя бы шёпотом; тихое чтение казалось чем-то необычным. С ростом количества книг и скорости их появления молчаливое чтение стало нормой. По сути, это был первый в истории переход к скорочтению: человек научился воспринимать текст глазами, не дожидаясь звучания.
+
+Сегодня мы переживаем новый перелом. Цифровые тексты доступны мгновенно и в неограниченном количестве, но внимание читателя остаётся конечным ресурсом. Исследователи отмечают, что при чтении с экрана люди чаще просматривают, чем читают вдумчиво, и хуже запоминают структуру длинного рассуждения. Это не приговор технологиям, а напоминание: каждый новый носитель требует новых навыков. Умение читать глубоко, удерживая сложную мысль на протяжении многих страниц, не возникает само собой — его, как и тысячи лет назад, приходится сознательно развивать.`,
+    questions: [
+      { q: "Для чего появились первые системы записи?", o: ["Для поэзии", "Для учёта зерна, скота и податей", "Для религиозных текстов", "Для переписки правителей"], a: 1 },
+      { q: "Какое опасение высказывали древние философы по поводу письма?", o: ["Оно слишком дорого", "Оно ослабит память", "Оно непонятно простым людям", "Оно вытеснит живопись"], a: 1 },
+      { q: "Что значит «кумулятивное» знание в контексте текста?", o: ["Секретное", "Растущее с опорой на предыдущие достижения", "Устное", "Забытое"], a: 1 },
+      { q: "Что, по тексту, стало нормой с распространением книгопечатания?", o: ["Чтение вслух", "Чтение молча", "Переписывание книг", "Устная передача"], a: 1 },
+      { q: "Какой вывод делает автор о цифровом чтении?", o: ["Оно вредно и от него надо отказаться", "Каждый носитель требует новых навыков, глубокое чтение нужно развивать", "Оно ничем не отличается от бумажного", "Оно полностью заменило память"], a: 1 }
+    ]
+  }
+];
+
+/* Ребусы: цифры и буквы. answers — допустимые варианты. */
+KG.REBUSES = [
+  { level: "лёгкий", topic: "слова", show: "100Л", alt: "Число сто и буква Л", answers: ["стол"] },
+  { level: "лёгкий", topic: "слова", show: "7Я", alt: "Цифра семь и буква Я", answers: ["семья"] },
+  { level: "лёгкий", topic: "слова", show: "О5", alt: "Буква О и цифра пять", answers: ["опять"] },
+  { level: "лёгкий", topic: "слова", show: "40А", alt: "Число сорок и буква А", answers: ["сорока"] },
+  { level: "средний", topic: "слова", show: "ВИ3НА", alt: "Буквы ВИ, цифра три, буквы НА", answers: ["витрина"] },
+  { level: "средний", topic: "слова", show: "СВИ100К", alt: "Буквы СВИ, число сто, буква К", answers: ["свисток"] },
+  { level: "средний", topic: "слова", show: "ПРО100Р", alt: "Буквы ПРО, число сто, буква Р", answers: ["простор"] },
+  { level: "средний", topic: "слова", show: "100ЛИЦА", alt: "Число сто и буквы ЛИЦА", answers: ["столица"] },
+  { level: "сложный", topic: "слова", show: "ПИ100ЛЕТ", alt: "Буквы ПИ, число сто, буквы ЛЕТ", answers: ["пистолет"] },
+  { level: "сложный", topic: "слова", show: "3БУНА", alt: "Цифра три и буквы БУНА", answers: ["трибуна"] },
+  { level: "сложный", topic: "слова", show: "ПА3ОТ", alt: "Буквы ПА, цифра три, буквы ОТ", answers: ["патриот"] }
+];
+
+KG.DECKS = [
+  { id: "writers", title: "Писатели и произведения", cards: [
+    ["«Евгений Онегин»", "А. С. Пушкин"], ["«Война и мир»", "Л. Н. Толстой"], ["«Преступление и наказание»", "Ф. М. Достоевский"],
+    ["«Мёртвые души»", "Н. В. Гоголь"], ["«Отцы и дети»", "И. С. Тургенев"], ["«Герой нашего времени»", "М. Ю. Лермонтов"],
+    ["«Вишнёвый сад»", "А. П. Чехов"], ["«Горе от ума»", "А. С. Грибоедов"], ["«Обломов»", "И. А. Гончаров"],
+    ["«Гроза»", "А. Н. Островский"], ["«Дон Кихот»", "М. де Сервантес"], ["«Гамлет»", "У. Шекспир"]
+  ]},
+  { id: "terms", title: "Литературные термины", cards: [
+    ["Метафора", "Скрытое сравнение, перенос свойств одного предмета на другой"], ["Эпитет", "Образное определение предмета"],
+    ["Гипербола", "Художественное преувеличение"], ["Олицетворение", "Наделение неживого свойствами живого"],
+    ["Аллитерация", "Повтор согласных звуков"], ["Антитеза", "Резкое противопоставление образов или понятий"],
+    ["Эпилог", "Заключительная часть, рассказывающая о судьбе героев после событий"], ["Пролог", "Вступительная часть произведения"],
+    ["Ирония", "Скрытая насмешка, когда сказанное противоположно смыслу"], ["Аллегория", "Иносказательное изображение понятия через образ"]
+  ]},
+  { id: "words", title: "Словарный запас", cards: [
+    ["Амбивалентный", "Двойственный, противоречивый"], ["Апологет", "Убеждённый защитник идеи"], ["Эфемерный", "Мимолётный, недолговечный"],
+    ["Индифферентный", "Равнодушный, безразличный"], ["Прагматичный", "Ориентированный на практическую пользу"], ["Сентенция", "Нравоучительное изречение"],
+    ["Фрустрация", "Состояние разочарования от неосуществимого желания"], ["Эрудиция", "Глубокие познания в разных областях"],
+    ["Дилетант", "Человек, занимающийся делом без специальных знаний"], ["Экспрессия", "Выразительность, яркое проявление чувств"]
+  ]}
+];
+
+KG.LOGIC = [
+  { type: "seq", level: "лёгкий", q: "Продолжите ряд: 2, 4, 6, 8, …", o: ["9", "10", "12", "16"], a: 1, why: "Каждое число больше предыдущего на 2." },
+  { type: "seq", level: "лёгкий", q: "Продолжите ряд: 1, 3, 9, 27, …", o: ["36", "54", "81", "30"], a: 2, why: "Каждое число умножается на 3." },
+  { type: "odd", level: "лёгкий", q: "Найдите лишнее: роман, повесть, рассказ, мольберт", o: ["роман", "повесть", "рассказ", "мольберт"], a: 3, why: "Мольберт — предмет для живописи, остальные — литературные жанры." },
+  { type: "odd", level: "лёгкий", q: "Найдите лишнее: Пушкин, Лермонтов, Чайковский, Гоголь", o: ["Пушкин", "Лермонтов", "Чайковский", "Гоголь"], a: 2, why: "Чайковский — композитор, остальные — писатели." },
+  { type: "seq", level: "средний", q: "Продолжите ряд: 1, 1, 2, 3, 5, 8, …", o: ["11", "12", "13", "16"], a: 2, why: "Каждое число — сумма двух предыдущих (ряд Фибоначчи): 5 + 8 = 13." },
+  { type: "seq", level: "средний", q: "Продолжите ряд: 1, 4, 9, 16, …", o: ["20", "25", "24", "32"], a: 1, why: "Квадраты натуральных чисел: 5² = 25." },
+  { type: "text", level: "средний", q: "Аня читает быстрее Бори, Боря — быстрее Вики. Кто читает медленнее всех?", o: ["Аня", "Боря", "Вика", "Нельзя определить"], a: 2, why: "Аня > Боря > Вика, значит Вика медленнее всех." },
+  { type: "text", level: "средний", q: "В книге 120 страниц. Маша читает 15 страниц в день. За сколько дней она прочтёт книгу?", o: ["6", "8", "10", "12"], a: 1, why: "120 / 15 = 8 дней." },
+  { type: "odd", level: "средний", q: "Найдите лишнее: 3, 7, 11, 15, 21", o: ["3", "11", "15", "21"], a: 3, why: "Числа ряда растут на 4: 3, 7, 11, 15, 19. Число 21 нарушает закономерность." },
+  { type: "seq", level: "сложный", q: "Продолжите ряд: 2, 6, 12, 20, 30, …", o: ["40", "42", "44", "36"], a: 1, why: "Разности растут: +4, +6, +8, +10, +12. 30 + 12 = 42." },
+  { type: "text", level: "сложный", q: "Книжная полка и книга стоят 1100 ₸. Полка дороже книги на 1000 ₸. Сколько стоит книга?", o: ["100 ₸", "50 ₸", "150 ₸", "10 ₸"], a: 1, why: "Книга x, полка x + 1000. 2x + 1000 = 1100, x = 50." },
+  { type: "text", level: "сложный", q: "Если вчера было завтра, то сегодня была бы пятница. Какой день сегодня на самом деле?", o: ["Среда", "Четверг", "Суббота", "Воскресенье"], a: 3, why: "«Вчера» = «завтра» сдвигает день на 2. Если бы сегодня было на 2 дня раньше — пятница, значит, сегодня воскресенье." }
+];
+
+KG.NEURO = [
+  { id: "kulak", title: "Кулак–ребро–ладонь", steps: ["Положите руку на стол кулаком.", "Поставьте ладонь ребром.", "Положите ладонь плашмя.", "Повторяйте в ритме метронома, затем другой рукой и двумя руками."] },
+  { id: "uho", title: "Ухо–нос", steps: ["Левой рукой возьмитесь за кончик носа.", "Правой рукой — за левое ухо.", "Хлопните в ладоши.", "Поменяйте руки: правая — нос, левая — правое ухо."] },
+  { id: "shagi", title: "Перекрёстные шаги", steps: ["Поднимите правое колено.", "Коснитесь его левой ладонью.", "Поднимите левое колено.", "Коснитесь его правой ладонью."] },
+  { id: "vosmerki", title: "Ленивые восьмёрки", steps: ["Вытяните руку, поднимите большой палец на уровне глаз.", "Медленно рисуйте в воздухе лежащую восьмёрку.", "Следите за пальцем только глазами, голова неподвижна.", "Повторите другой рукой и двумя руками вместе."] },
+  { id: "kolechko", title: "Колечко", steps: ["Соедините большой и указательный пальцы в кольцо.", "Затем большой и средний.", "Затем большой и безымянный, потом мизинец.", "Двигайтесь в обратном порядке, затем двумя руками."] },
+  { id: "dve-ruki", title: "Рисование двумя руками", steps: ["Возьмите по карандашу в каждую руку.", "Одновременно рисуйте зеркальные фигуры: круги.", "Затем квадраты и треугольники.", "Усложните: левой — круг, правой — квадрат."] }
+];
+
+KG.NEURO_SETS = [
+  { id: "utro", title: "Утренняя разминка", minutes: 5, items: ["kulak", "uho", "shagi", "vosmerki", "kolechko"] },
+  { id: "pered-chteniem", title: "Перед чтением", minutes: 3, items: ["kulak", "uho", "vosmerki"] },
+  { id: "obed", title: "Перезагрузка в обед", minutes: 4, items: ["shagi", "kolechko", "dve-ruki", "vosmerki"] }
+];
+
+KG.ACHIEVEMENTS = [
+  { id: "first", title: "Первая тренировка", desc: "Завершите любую тренировку", test: s => s.results.length >= 1 },
+  { id: "streak7", title: "7 дней подряд", desc: "Тренируйтесь 7 дней без пропусков", test: s => s.bestStreak >= 7 },
+  { id: "streak30", title: "30 дней подряд", desc: "Тренируйтесь 30 дней без пропусков", test: s => s.bestStreak >= 30 },
+  { id: "shulte30", title: "Шульте 5×5 быстрее 30 с", desc: "Пройдите классическую таблицу 5×5 быстрее 30 секунд", test: s => s.results.some(r => r.type === "shulte" && r.params.size === 5 && r.params.mode === "asc" && r.value < 30) },
+  { id: "reader", title: "Вдумчивый читатель", desc: "Тест скорости с пониманием 100%", test: s => s.results.some(r => r.type === "skorost" && r.extra && r.extra.comp === 100) },
+  { id: "allTrainers", title: "Универсал", desc: "Попробуйте все 7 тренажёров", test: s => new Set(s.results.map(r => r.type)).size >= 7 },
+  { id: "course", title: "Курс пройден", desc: "Отметьте все уроки курса", test: s => s.lessons.length >= 10 },
+  { id: "plus30", title: "+30% к скорости", desc: "Эффективная скорость выросла на 30% от первого теста", test: s => { const t = s.results.filter(r => r.type === "skorost" && r.valid); return t.length >= 2 && t[t.length - 1].value >= t[0].value * 1.3; } }
+];
+
+</script>
+  <script>
+/* Ядро: хранилище гостя, иконки, роутер, общие страницы. */
+(function () {
+  const KG = window.KG;
+
+  /* ---------- Хранилище (гостевой режим, PRD 6.0) ---------- */
+  const KEY = "kg-state-v1";
+  const defaults = () => ({ results: [], lessons: [], speedSeen: [], leitner: {}, howtoSeen: {}, achievements: [], profile: { name: "", goal: 400 }, theme: "system", cookie: null });
+  let state;
+  try { state = Object.assign(defaults(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) { state = defaults(); }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+  KG.state = () => state;
+  KG.save = save;
+  KG.resetAll = () => { state = defaults(); save(); applyTheme(); };
+
+  const pad = n => String(n).padStart(2, "0");
+  const dayKey = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+  KG.dayKey = dayKey;
+
+  KG.addResult = function (r) {
+    r.date = new Date().toISOString();
+    r.day = dayKey(new Date());
+    if (r.valid === undefined) r.valid = true;
+    state.results.push(r);
+    save();
+    checkAchievements();
+    track("training_complete", { trainer: r.type, params: r.params, result: r.value });
+  };
+  KG.resultsOf = (type, match) => state.results.filter(r => r.type === type && (!match || Object.keys(match).every(k => r.params[k] === match[k])));
+  KG.best = function (type, match, lowerIsBetter) {
+    const list = KG.resultsOf(type, match).filter(r => r.valid);
+    if (!list.length) return null;
+    return list.reduce((b, r) => (lowerIsBetter ? r.value < b.value : r.value > b.value) ? r : b);
+  };
+
+  function streaks() {
+    const days = new Set(state.results.map(r => r.day));
+    const d = new Date();
+    if (!days.has(dayKey(d))) d.setDate(d.getDate() - 1);
+    let cur = 0;
+    while (days.has(dayKey(d))) { cur++; d.setDate(d.getDate() - 1); }
+    const sorted = [...days].sort();
+    let best = 0, run = 0, prev = null;
+    sorted.forEach(k => {
+      const t = new Date(k + "T12:00:00");
+      run = prev && (t - prev) / 864e5 < 1.5 ? run + 1 : 1;
+      best = Math.max(best, run); prev = t;
+    });
+    return { cur, best };
+  }
+  KG.streaks = streaks;
+
+  function weekCount() {
+    const from = new Date(); from.setDate(from.getDate() - 6);
+    const k = dayKey(from);
+    return state.results.filter(r => r.day >= k).length;
+  }
+
+  function checkAchievements() {
+    const s = { results: state.results, lessons: state.lessons, bestStreak: streaks().best };
+    KG.ACHIEVEMENTS.forEach(a => {
+      if (!state.achievements.includes(a.id) && a.test(s)) {
+        state.achievements.push(a.id); save();
+        setTimeout(() => toast("Новое достижение: «" + a.title + "»"), 600);
+      }
+    });
+  }
+  KG.checkAchievements = checkAchievements;
+
+  /* Аналитика (8.1): только после согласия на cookies. Здесь — журнал в консоль. */
+  function track(name, params) { if (state.cookie === "all") console.info("[analytics]", name, params || {}); }
+  KG.track = track;
+
+  /* ---------- Утилиты ---------- */
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  KG.esc = esc;
+  KG.fmt = (n, d = 1) => (Math.round(n * 10 ** d) / 10 ** d).toFixed(d).replace(".", ",");
+  KG.shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  KG.words = t => (t.match(/[A-Za-zА-Яа-яЁё0-9-]+/g) || []).length;
+  KG.readMin = body => Math.max(1, Math.round(KG.words(JSON.stringify(body)) / 200));
+  const fmtDate = s => new Date(s).toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
+  KG.fmtDate = fmtDate;
+
+  function toast(msg) {
+    const t = document.createElement("div");
+    t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 3500);
+  }
+  KG.toast = toast;
+
+  /* ---------- Иконки (линейные, в духе Lucide) ---------- */
+  const P = {
+    book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
+    grid: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>',
+    puzzle: '<path d="M19.4 14.5a2 2 0 1 0 0-3l-.4.1V8a1 1 0 0 0-1-1h-3.6l.1-.4a2 2 0 1 0-3 0l.1.4H8a1 1 0 0 0-1 1v3.6l-.4-.1a2 2 0 1 0 0 3l.4-.1V18a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3.6z"/>',
+    cards: '<rect x="2" y="6" width="14" height="16" rx="2"/><path d="M8 2h12a2 2 0 0 1 2 2v14"/>',
+    brain: '<path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.1A3 3 0 0 0 4.6 9a3 3 0 0 0 .4 5.4A3 3 0 0 0 9.5 19 2.5 2.5 0 0 0 12 21.5V4.5A2.5 2.5 0 0 0 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.1A3 3 0 0 1 19.4 9a3 3 0 0 1-.4 5.4 3 3 0 0 1-4.5 4.6A2.5 2.5 0 0 1 12 21.5"/>',
+    hand: '<path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/>',
+    palette: '<circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2a10 10 0 0 0 0 20c.9 0 1.7-.8 1.7-1.7 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1a1.6 1.6 0 0 1 1.6-1.7h2A5.6 5.6 0 0 0 22 10.8C22 5.9 17.5 2 12 2z"/>',
+    cup: '<path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/>',
+    eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+    flame: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4.1 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3.4.3 1.5 1.4 2.9 2.5 2.9z"/>',
+    award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/>',
+    user: '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>',
+    menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+    bookmark: '<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>'
+  };
+  const icon = (name, size = 24, cls = "") => `<svg class="${cls}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[name] || ""}</svg>`;
+  KG.icon = icon;
+
+  const heroArt = `<svg viewBox="0 0 320 260" width="100%" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 200h240" />
+    <rect x="58" y="96" width="34" height="104" rx="3" fill="var(--powder)"/><path d="M58 116h34M58 180h34"/>
+    <rect x="94" y="72" width="28" height="128" rx="3" fill="var(--powder)"/><path d="M94 92h28M94 180h28"/>
+    <rect x="124" y="110" width="40" height="90" rx="3" transform="rotate(-8 144 155)" fill="var(--powder)"/>
+    <path d="M110 72v40l-5-6-5 6V72" stroke="var(--accent)" fill="var(--accent)"/>
+    <path d="M196 176h56v10a14 14 0 0 1-14 14h-28a14 14 0 0 1-14-14z" fill="var(--powder)"/><path d="M252 180h8a8 8 0 0 1 0 16h-10"/>
+    <path d="M212 166c0-8 8-8 8-16M228 166c0-8 8-8 8-16" opacity=".6"/>
+    <circle cx="208" cy="120" r="14"/><circle cx="244" cy="120" r="14"/><path d="M222 120h8M194 118l-10-6M258 118l10-6"/>
+    <path d="M276 92c-10 0-14 10-10 18 6-2 10-8 10-18zM276 92c8 4 10 14 4 20-6-6-6-14-4-20z" fill="var(--powder)"/><path d="M272 112v24"/>
+  </svg>`;
+
+  /* ---------- Тема ---------- */
+  function applyTheme() {
+    const t = state.theme;
+    if (t === "system") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", t);
+    const isDark = t === "dark" || (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+    const b = document.getElementById("theme-btn");
+    if (b) { b.innerHTML = icon(isDark ? "sun" : "moon", 20); b.setAttribute("aria-label", isDark ? "Светлая тема" : "Тёмная тема"); }
+  }
+  KG.applyTheme = applyTheme;
+
+  /* ---------- Каркас ---------- */
+  const NAV = [["#/", "Главная"], ["#/metodika", "Курс"], ["#/trenazhery", "Тренажёры"], ["#/stati", "Статьи"], ["#/kak-chitat", "Как читать"], ["#/kabinet", "Кабинет"]];
+
+  function layout() {
+    document.body.innerHTML = `
+      <a class="skip" href="#app">К содержимому</a>
+      <header class="site-header"><div class="container header-row">
+        <a class="logo" href="#/">${icon("bookmark", 28)} Книжная гостиная</a>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Меню" aria-expanded="false" aria-controls="nav">${icon("menu", 22)}</button>
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+          ${NAV.map(([h, t]) => `<a href="${h}">${t}</a>`).join("")}
+          <button class="icon-btn" id="theme-btn"></button>
+        </nav>
+      </div></header>
+      <main id="app" tabindex="-1"></main>
+      <footer class="site-footer"><div class="container">
+        <div class="footer-grid">
+          <div><a class="logo" href="#/">${icon("bookmark", 24)} Книжная гостиная</a>
+            <p class="muted" style="margin-top:10px">Скорочтение и тренировка мозга. Уютно, по 10 минут в день.</p>
+            <p class="muted">hello@knizhnaya-gostinaya.example</p></div>
+          <div><h4>Учиться</h4><ul><li><a href="#/metodika">Курс скорочтения</a></li><li><a href="#/kak-chitat">Как читать книгу</a></li><li><a href="#/stati">Статьи</a></li></ul></div>
+          <div><h4>Тренажёры</h4><ul>${KG.TRAINERS.slice(0, 4).map(t => `<li><a href="#/trenazhery/${t.slug}">${t.title}</a></li>`).join("")}<li><a href="#/trenazhery">Все тренажёры</a></li></ul></div>
+          <div><h4>Проект</h4><ul><li><a href="#/o-proekte">О проекте</a></li><li><a href="#/politika">Политика конфиденциальности</a></li><li><a href="#/soglasie">Согласие на обработку данных</a></li></ul></div>
+        </div>
+        <p class="muted" style="margin-top:24px;font-size:14px">© ${new Date().getFullYear()} Книжная гостиная</p>
+      </div></footer>`;
+    const mb = document.getElementById("menu-btn"), nav = document.getElementById("nav");
+    mb.onclick = () => { const o = nav.classList.toggle("open"); mb.setAttribute("aria-expanded", o); };
+    nav.addEventListener("click", e => { if (e.target.closest("a")) { nav.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } });
+    document.getElementById("theme-btn").onclick = () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark" || (!document.documentElement.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
+      state.theme = isDark ? "light" : "dark"; save(); applyTheme();
+    };
+    applyTheme();
+    cookieBanner();
+  }
+
+  function cookieBanner() {
+    if (state.cookie) return;
+    const d = document.createElement("div");
+    d.className = "card cookie"; d.setAttribute("role", "dialog"); d.setAttribute("aria-label", "Cookies");
+    d.innerHTML = `<p style="margin-bottom:12px">Мы используем cookies и локальное хранилище, чтобы сохранять ваши результаты. Аналитика включается только с вашего согласия. <a href="#/politika">Подробнее</a></p>
+      <div class="btn-row"><button class="btn small" data-c="all">Принять все</button><button class="btn small ghost" data-c="necessary">Только необходимые</button></div>`;
+    d.onclick = e => { const c = e.target.dataset.c; if (c) { state.cookie = c; save(); d.remove(); } };
+    document.body.appendChild(d);
+  }
+
+  /* ---------- Роутер ---------- */
+  const routes = [];
+  KG.route = (re, fn) => routes.push([re, fn]);
+  KG.cleanup = null;
+
+  function go() {
+    if (typeof KG.cleanup === "function") { try { KG.cleanup(); } catch (e) {} }
+    KG.cleanup = null;
+    const path = (location.hash.replace(/^#/, "") || "/").split("?")[0];
+    const app = document.getElementById("app");
+    let out = null;
+    for (const [re, fn] of routes) { const m = path.match(re); if (m) { out = fn(...m.slice(1)); if (out) break; } }
+    if (!out) out = notFound();
+    app.innerHTML = `<div class="container">${out.html}</div>`;
+    document.title = (out.title ? out.title + " — " : "") + "Книжная гостиная";
+    document.querySelectorAll(".nav a").forEach(a => {
+      const h = a.getAttribute("href").slice(1);
+      a.toggleAttribute("aria-current", h === "/" ? path === "/" : path.startsWith(h));
+      if (a.hasAttribute("aria-current")) a.setAttribute("aria-current", "page");
+    });
+    if (out.mount) out.mount(app);
+    if (!location.hash.includes("#", 1)) window.scrollTo(0, 0);
+    app.focus({ preventScroll: true });
+  }
+  KG.go = go;
+
+  /* ---------- Страницы ---------- */
+  const trainerCard = t => `<a class="card" href="#/trenazhery/${t.slug}">${icon(t.icon, 40, "ico")}<h3 style="margin:0">${t.title}</h3><p class="muted" style="margin:0">${t.desc}</p><span class="meta">⏱ ${t.time}</span></a>`;
+  const articleCard = a => `<a class="card" href="#/stati/${a.slug}"><div class="thumb">${icon(a.icon, 56)}</div><div class="tags">${a.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div><h3 style="margin:0">${esc(a.title)}</h3><p class="muted" style="margin:0">${esc(a.excerpt)}</p><span class="meta">${fmtDate(a.date)} · ${KG.readMin(a.body)} мин чтения</span></a>`;
+
+  function dailySet() {
+    const k = dayKey(new Date());
+    let seed = [...k].reduce((s, c) => (s * 31 + c.charCodeAt(0)) >>> 0, 7);
+    const rnd = () => (seed = (seed * 1103515245 + 12345) >>> 0) / 4294967296;
+    const pool = KG.TRAINERS.slice();
+    const out = [];
+    while (out.length < 3) out.push(pool.splice(Math.floor(rnd() * pool.length), 1)[0]);
+    return out;
+  }
+
+  function nextLesson() { return KG.LESSONS.find(l => !state.lessons.includes(l.n)) || null; }
+
+  KG.route(/^\/$/, () => {
+    const st = streaks(), has = state.results.length > 0, nl = nextLesson();
+    const daily = dailySet();
+    const doneToday = new Set(state.results.filter(r => r.day === dayKey(new Date())).map(r => r.type));
+    return { title: "", html: `
+      <section class="hero">
+        <div>
+          ${has ? `<div class="streak">${icon("flame", 20)} Серия: ${st.cur} ${plural(st.cur, "день", "дня", "дней")} подряд</div>` : ""}
+          <h1>Читайте быстрее.<br>Понимайте глубже.</h1>
+          <p class="lead">Пошаговый курс скорочтения, короткие тренажёры для внимания и памяти и статистика вашего прогресса. По 10 минут в день — за чашкой чая.</p>
+          <div class="btn-row">
+            <a class="btn" href="#/trenazhery/skorost">Пройти тест скорости чтения</a>
+            <a class="btn ghost" href="${nl && state.lessons.length ? "#/metodika/" + nl.slug : "#/metodika"}">${state.lessons.length ? "Продолжить курс" : "Начать курс"}</a>
+          </div>
+        </div>
+        <div class="hero-art">${heroArt}</div>
+      </section>
+
+      <section class="section"><div class="section-head"><h2>С чего начать</h2></div>
+        <div class="grid g3 steps">
+          <div class="card step"><h3>Узнайте свою скорость</h3><p class="muted">Тест на 5 минут: слова в минуту и процент понимания.</p><a href="#/trenazhery/skorost">Пройти тест →</a></div>
+          <div class="card step"><h3>Пройдите уроки</h3><p class="muted">10 коротких уроков с практикой: от проговаривания до чтения блоками.</p><a href="#/metodika">К курсу →</a></div>
+          <div class="card step"><h3>Тренируйтесь каждый день</h3><p class="muted">5–15 минут тренажёров. Серия дней и достижения помогут не бросить.</p><a href="#/trenazhery">К тренажёрам →</a></div>
+        </div>
+      </section>
+
+      <section class="section"><div class="card powder">
+        <div class="section-head" style="margin-bottom:12px"><h2 style="margin:0">Тренировка дня</h2><span class="meta">Набор обновляется в полночь</span></div>
+        <div class="grid g3">${daily.map(t => `<a class="card" href="#/trenazhery/${t.slug}"><div style="display:flex;gap:12px;align-items:center">${icon(t.icon, 32, "ico")}<h3 style="margin:0;font-size:18px">${t.title}</h3>${doneToday.has(t.slug) ? `<span style="margin-left:auto;color:var(--ok)" aria-label="Выполнено">${icon("check", 24)}</span>` : ""}</div><span class="meta">⏱ ${t.time}</span></a>`).join("")}</div>
+      </div></section>
+
+      <div class="ribbon" aria-hidden="true"></div>
+
+      <section><div class="section-head"><h2>Тренажёры</h2><a href="#/trenazhery">Все тренажёры →</a></div>
+        <div class="grid g4">${KG.TRAINERS.map(trainerCard).join("")}</div></section>
+
+      <section class="section"><div class="section-head"><h2>Свежие статьи</h2><a href="#/stati">Все статьи →</a></div>
+        <div class="grid g3">${KG.ARTICLES.slice(0, 3).map(articleCard).join("")}</div></section>` };
+  });
+
+  function plural(n, a, b, c) { const m10 = n % 10, m100 = n % 100; return m10 === 1 && m100 !== 11 ? a : m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20) ? b : c; }
+  KG.plural = plural;
+
+  function renderBlocks(blocks, withIds) {
+    let i = 0;
+    return blocks.map(([t, v]) => {
+      if (t === "h2") { const id = "s" + (++i); return `<h2 id="${withIds ? id : ""}">${esc(v)}</h2>`; }
+      if (t === "h3") return `<h3>${esc(v)}</h3>`;
+      if (t === "p") return `<p>${esc(v)}</p>`;
+      if (t === "ul") return `<ul>${v.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+      if (t === "ol") return `<ol>${v.map(x => `<li>${esc(x)}</li>`).join("")}</ol>`;
+      if (t === "quote") return `<blockquote>${esc(v)}</blockquote>`;
+      return "";
+    }).join("");
+  }
+  KG.renderBlocks = renderBlocks;
+
+  /* Лонгрид «Как правильно читать книгу» */
+  KG.route(/^\/kak-chitat$/, () => ({
+    title: "Как правильно читать книгу",
+    html: `<div class="breadcrumbs"><a href="#/">Главная</a> / Как читать книгу</div>
+      <h1>Как правильно читать книгу</h1>
+      <p class="lead muted" style="font-size:19px;max-width:60ch">От подготовки места до закрепления прочитанного: практическое руководство, которое превращает чтение из привычки в навык.</p>
+      <div class="article-layout" style="margin-top:24px">
+        <article class="prose">
+          ${KG.HOWTO.map(s => `<section><h2 id="${s.id}">${esc(s.title)}</h2>${renderBlocks(s.body)}</section>`).join("")}
+          <div class="card powder" style="margin-top:32px;font-family:var(--ui)">
+            <h3>Чек-лист «Как читать книгу»</h3>
+            <p class="muted">Краткая версия руководства на одной странице. Распечатайте и положите в книгу как закладку.</p>
+            <button class="btn" id="print-check">Скачать чек-лист (печать в PDF)</button>
+          </div>
+        </article>
+        <nav class="toc" aria-label="Оглавление"><b>Содержание</b><ol>${KG.HOWTO.map(s => `<li><a href="#/kak-chitat#${s.id}" data-anchor="${s.id}">${esc(s.title)}</a></li>`).join("")}</ol></nav>
+      </div>`,
+    mount(app) {
+      tocLinks(app);
+      app.querySelector("#print-check").onclick = () => {
+        const w = window.open("", "_blank");
+        if (!w) { toast("Разрешите всплывающие окна, чтобы скачать чек-лист"); return; }
+        w.document.write(`<!doctype html><html lang="ru"><meta charset="utf-8"><title>Чек-лист — Как читать книгу</title><style>body{font:16px/1.6 Georgia,serif;max-width:640px;margin:40px auto;color:#3E2A2F}h1{color:#A8476A}li{margin:6px 0}</style>
+          <h1>Как читать книгу: чек-лист</h1><ol>
+          <li>☐ Тихое место, хороший свет, телефон вне поля зрения</li><li>☐ 5–10 минут на просмотр: аннотация, оглавление, выводы</li>
+          <li>☐ 2–3 вопроса, на которые хочу получить ответ</li><li>☐ Пометки: «!» важно, «?» спорно, «→» применить</li>
+          <li>☐ Пересказ главы за 60 секунд</li><li>☐ Конспект: ментальная карта, Корнелл или выписки</li>
+          <li>☐ Повторение через день, неделю и месяц</li><li>☐ Рассказать о книге другу</li></ol>
+          <p>Книжная гостиная</p><script>print()<\/script>`);
+        w.document.close();
+      };
+    }
+  }));
+
+  function tocLinks(app) {
+    app.querySelectorAll("[data-anchor]").forEach(a => a.addEventListener("click", e => {
+      e.preventDefault();
+      const el = document.getElementById(a.dataset.anchor);
+      if (el) { el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); el.setAttribute("tabindex", "-1"); el.focus({ preventScroll: true }); }
+    }));
+  }
+
+  /* Курс */
+  KG.route(/^\/metodika$/, () => {
+    const done = state.lessons.length, nl = nextLesson();
+    return { title: "Методика скорочтения", html: `
+      <div class="breadcrumbs"><a href="#/">Главная</a> / Курс</div>
+      <h1>Методика скорочтения</h1>
+      <p class="muted" style="font-size:18px;max-width:62ch">10 уроков по 5–10 минут. В каждом — короткая теория и практическое задание в тренажёре. Все уроки открыты; рекомендуемый порядок подсвечен.</p>
+      <div class="card" style="margin:24px 0">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-weight:700"><span>Прогресс курса</span><span>${done} из ${KG.LESSONS.length}</span></div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${KG.LESSONS.length}" aria-valuenow="${done}" aria-label="Прогресс курса"><i style="width:${done / KG.LESSONS.length * 100}%"></i></div>
+        ${done === KG.LESSONS.length ? `<p style="margin:12px 0 0;font-weight:700;color:var(--gold-text)">Курс пройден! ${courseGrowth()}</p>` : ""}
+      </div>
+      <ol class="lesson-list">${KG.LESSONS.map(l => {
+        const d = state.lessons.includes(l.n), isNext = nl && nl.n === l.n;
+        return `<li><a class="card lesson-item${d ? " done" : ""}${isNext ? " next" : ""}" href="#/metodika/${l.slug}" style="flex-direction:row">
+          <span class="lesson-num">${d ? icon("check", 20) : l.n}</span>
+          <span><b>${esc(l.title)}</b><br><span class="meta">${d ? "Пройден" : "Урок " + l.n + " · ~7 мин + практика"}</span></span>
+          ${isNext ? `<span class="badge-next">Следующий урок</span>` : ""}</a></li>`;
+      }).join("")}</ol>` };
+  });
+
+  function courseGrowth() {
+    const t = state.results.filter(r => r.type === "skorost" && r.valid);
+    if (t.length < 2) return "";
+    const g = Math.round((t[t.length - 1].value / t[0].value - 1) * 100);
+    return `Эффективная скорость: ${t[0].value} → ${t[t.length - 1].value} сл/мин (${g >= 0 ? "+" : ""}${g}%).`;
+  }
+
+  KG.route(/^\/metodika\/([\w-]+)$/, slug => {
+    const i = KG.LESSONS.findIndex(l => l.slug === slug);
+    if (i < 0) return null;
+    const l = KG.LESSONS[i], prev = KG.LESSONS[i - 1], next = KG.LESSONS[i + 1];
+    const done = state.lessons.includes(l.n);
+    const tr = KG.TRAINERS.find(t => t.slug === l.trainer);
+    return { title: l.title, html: `
+      <div class="narrow" style="margin:0 auto">
+      <div class="breadcrumbs"><a href="#/">Главная</a> / <a href="#/metodika">Курс</a> / Урок ${l.n}</div>
+      <div class="progress" style="margin-bottom:24px" aria-hidden="true"><i style="width:${l.n / KG.LESSONS.length * 100}%"></i></div>
+      <p class="meta">Урок ${l.n} из ${KG.LESSONS.length}</p>
+      <h1>${esc(l.title)}</h1>
+      <article class="prose">${renderBlocks(l.body)}</article>
+      <div class="card powder" style="margin-top:32px">
+        <h3>${icon("check", 20)} Практическое задание</h3>
+        <p>${esc(l.task)}</p>
+        <div class="btn-row"><a class="btn ghost" href="#/trenazhery/${tr.slug}">Открыть: ${tr.title}</a>
+        <button class="btn" id="lesson-done" ${done ? "disabled" : ""}>${done ? "Урок пройден ✓" : "Урок пройден"}</button></div>
+        <p class="meta" id="lesson-hint" style="margin:10px 0 0">${done ? "" : "Кнопка станет активной после задания или через 3 минуты на странице."}</p>
+      </div>
+      <nav class="pager" aria-label="Уроки">
+        ${prev ? `<a class="btn ghost" href="#/metodika/${prev.slug}">← ${esc(prev.title)}</a>` : "<span></span>"}
+        ${next ? `<a class="btn ghost" href="#/metodika/${next.slug}">${esc(next.title)} →</a>` : `<a class="btn ghost" href="#/metodika">К списку уроков</a>`}
+      </nav></div>`,
+      mount(app) {
+        const btn = app.querySelector("#lesson-done");
+        if (done) return;
+        const trainedToday = state.results.some(r => r.type === l.trainer && r.day === dayKey(new Date()));
+        if (!trainedToday) {
+          btn.disabled = true;
+          const t = setTimeout(() => { btn.disabled = false; app.querySelector("#lesson-hint").textContent = ""; }, 180000);
+          KG.cleanup = () => clearTimeout(t);
+        } else app.querySelector("#lesson-hint").textContent = "";
+        btn.onclick = () => {
+          if (!state.lessons.includes(l.n)) state.lessons.push(l.n);
+          save(); track("lesson_complete", { lesson: l.n });
+          if (state.lessons.length === KG.LESSONS.length) track("course_complete", {});
+          checkAchievements();
+          toast("Урок отмечен пройденным");
+          go();
+        };
+      } };
+  });
+
+  /* Статьи */
+  KG.route(/^\/stati$/, () => {
+    const q = new URLSearchParams(location.hash.split("?")[1] || "");
+    const tag = q.get("tag");
+    const list = KG.ARTICLES.filter(a => !tag || a.tags.includes(tag));
+    return { title: "Статьи", html: `
+      <div class="breadcrumbs"><a href="#/">Главная</a> / Статьи</div>
+      <h1>Статьи</h1>
+      <div class="tags" role="group" aria-label="Фильтр по тегам" style="margin:16px 0 24px">
+        <a class="tag" href="#/stati" style="text-decoration:none;${!tag ? "background:var(--accent);color:var(--on-accent);border-color:var(--accent)" : ""}" ${!tag ? 'aria-current="true"' : ""}>все</a>
+        ${KG.TAGS.map(t => `<a class="tag" href="#/stati?tag=${encodeURIComponent(t)}" style="text-decoration:none;${t === tag ? "background:var(--accent);color:var(--on-accent);border-color:var(--accent)" : ""}" ${t === tag ? 'aria-current="true"' : ""}>${t}</a>`).join("")}
+      </div>
+      ${list.length ? `<div class="grid g3">${list.map(articleCard).join("")}</div>` : `<p class="muted">Статей с этим тегом пока нет.</p>`}` };
+  });
+
+  KG.route(/^\/stati\/([\w-]+)$/, slug => {
+    const a = KG.ARTICLES.find(x => x.slug === slug);
+    if (!a) return null;
+    const heads = a.body.filter(b => b[0] === "h2");
+    const related = KG.ARTICLES.filter(x => x !== a).map(x => [x, x.tags.filter(t => a.tags.includes(t)).length]).sort((p, q) => q[1] - p[1]).slice(0, 3).map(p => p[0]);
+    return { title: a.title, html: `
+      <div class="breadcrumbs"><a href="#/">Главная</a> / <a href="#/stati">Статьи</a> / ${esc(a.title)}</div>
+      <div class="tags" style="margin-bottom:12px">${a.tags.map(t => `<a class="tag" style="text-decoration:none" href="#/stati?tag=${encodeURIComponent(t)}">${t}</a>`).join("")}</div>
+      <h1>${esc(a.title)}</h1>
+      <p class="meta">${fmtDate(a.date)} · ${KG.readMin(a.body)} мин чтения</p>
+      <div class="cover">${icon(a.icon, 110)}</div>
+      <div class="article-layout">
+        <article class="prose"><p style="font-size:20px">${esc(a.excerpt)}</p>${renderBlocks(a.body, true)}</article>
+        ${heads.length ? `<nav class="toc" aria-label="Оглавление"><b>Содержание</b><ol>${heads.map((h, i) => `<li><a href="#" data-anchor="s${i + 1}">${esc(h[1])}</a></li>`).join("")}</ol></nav>` : ""}
+      </div>
+      <div class="ribbon" aria-hidden="true"></div>
+      <section><h2>Читайте также</h2><div class="grid g3">${related.map(articleCard).join("")}</div></section>`,
+      mount: tocLinks };
+  });
+
+  /* Все тренажёры */
+  KG.route(/^\/trenazhery$/, () => ({ title: "Тренажёры", html: `
+    <div class="breadcrumbs"><a href="#/">Главная</a> / Тренажёры</div>
+    <h1>Тренажёры</h1>
+    <p class="muted" style="font-size:18px;max-width:62ch">Короткие упражнения для скорости чтения, внимания и памяти. Результаты сохраняются в этом браузере и видны в кабинете.</p>
+    <div class="grid g3" style="margin-top:24px">${KG.TRAINERS.map(trainerCard).join("")}</div>` }));
+
+  /* Кабинет */
+  const CAB_TABS = [["", "Дашборд"], ["/progress", "Статистика"], ["/dostizheniya", "Достижения"], ["/nastroiki", "Настройки"]];
+  const cabTabs = cur => `<nav class="tabs" aria-label="Разделы кабинета">${CAB_TABS.map(([p, t]) => `<a href="#/kabinet${p}" ${p === cur ? 'aria-current="page"' : ""}>${t}</a>`).join("")}</nav>`;
+  const guestNote = `<div class="card powder" style="margin-bottom:24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">${icon("user", 28)}<div style="flex:1;min-width:220px"><b>Гостевой режим.</b> Результаты хранятся только в этом браузере. Регистрация с синхронизацией между устройствами появится на следующем этапе.</div><a class="btn small ghost" href="#/registratsiya">Подробнее</a></div>`;
+
+  function lineChart(points, opts) {
+    if (points.length < 2) return `<p class="muted">Нужно минимум два результата, чтобы построить график.</p>`;
+    const W = 640, H = 240, L = 48, R = 16, T = 16, B = 32;
+    const ys = points.map(p => p.y); let min = Math.min(...ys), max = Math.max(...ys);
+    if (min === max) { min -= 1; max += 1; }
+    const pad = (max - min) * 0.1; min = Math.max(0, min - pad); max += pad;
+    const x = i => L + i * (W - L - R) / (points.length - 1);
+    const y = v => T + (H - T - B) * (1 - (v - min) / (max - min));
+    const ticks = [0, 1, 2, 3].map(i => min + (max - min) * i / 3);
+    const d = points.map((p, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(p.y).toFixed(1)).join(" ");
+    const step = Math.ceil(points.length / 6);
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opts.label)}">
+      ${ticks.map(t => `<line class="gridline" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 8}" y="${y(t) + 4}" text-anchor="end">${Math.round(t * 10) / 10}</text>`).join("")}
+      <path class="line" d="${d}"/>
+      ${points.map((p, i) => `<circle class="pt" cx="${x(i)}" cy="${y(p.y)}" r="4"><title>${esc(p.label)}: ${p.y} ${opts.unit}</title></circle>`).join("")}
+      ${points.map((p, i) => i % step === 0 || i === points.length - 1 ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${esc(p.short)}</text>` : "").join("")}
+    </svg>`;
+  }
+
+  KG.route(/^\/kabinet$/, () => {
+    const st = streaks(), sp = state.results.filter(r => r.type === "skorost" && r.valid);
+    const last = sp[sp.length - 1], goal = state.profile.goal || 400;
+    const pct = last ? Math.min(100, Math.round(last.value / goal * 100)) : 0;
+    return { title: "Личный кабинет", html: `
+      <h1>${state.profile.name ? "Здравствуйте, " + esc(state.profile.name) + "!" : "Личный кабинет"}</h1>
+      ${cabTabs("")}${guestNote}
+      <div class="stat-tiles">
+        <div class="stat-tile"><span>Эффективная скорость</span><b>${last ? last.value : "—"}</b><span>${last ? "слов/мин" : "пройдите тест"}</span></div>
+        <div class="stat-tile"><span>Серия дней</span><b>${st.cur}</b><span>рекорд: ${st.best}</span></div>
+        <div class="stat-tile"><span>Тренировок за 7 дней</span><b>${weekCount()}</b><span>всего: ${state.results.length}</span></div>
+        <div class="stat-tile"><span>Курс</span><b>${state.lessons.length}/${KG.LESSONS.length}</b><span>уроков пройдено</span></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <div style="display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px"><span>Прогресс к цели ${goal} сл/мин</span><span>${pct}%</span></div>
+        <div class="progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-label="Прогресс к цели"><i style="width:${pct}%"></i></div>
+        <p class="meta" style="margin:8px 0 0">Цель можно изменить в <a href="#/kabinet/nastroiki">настройках</a>.</p>
+      </div>
+      <div class="card" style="margin-top:16px"><h3>Эффективная скорость чтения</h3>
+        ${lineChart(sp.map(r => ({ y: r.value, label: fmtDate(r.date), short: new Date(r.date).toLocaleDateString("ru-RU", { day: "numeric", month: "short" }) })), { label: "График эффективной скорости чтения", unit: "сл/мин" })}</div>
+      <div class="btn-row" style="margin-top:24px"><a class="btn" href="#/trenazhery">Тренироваться</a><a class="btn ghost" href="#/metodika">Продолжить курс</a></div>` };
+  });
+
+  const TYPE_NAMES = Object.fromEntries(KG.TRAINERS.map(t => [t.slug, t.title]));
+  KG.TYPE_NAMES = TYPE_NAMES;
+  function describe(r) {
+    const p = r.params || {};
+    switch (r.type) {
+      case "shulte": return [`${p.size}×${p.size}, ${({ asc: "по порядку", desc: "обратный", letters: "буквы", gorbov: "Горбова" })[p.mode] || ""}`, KG.fmt(r.value) + " с", r.errors];
+      case "skorost": return [`${p.level || ""}`, `${r.value} сл/мин (${r.extra.wpm} × ${r.extra.comp}%)`, "—"];
+      case "rebusy": return [p.level, r.value + " очк.", "—"];
+      case "kartochki": return [p.mode, r.value + " " + (r.unit || ""), r.errors ?? "—"];
+      case "logika": return [p.mode === "math" ? "устный счёт, " + p.level : p.level, r.value + " " + (r.unit || ""), r.errors ?? "—"];
+      case "neiro": return [p.set || "", KG.fmt(r.value / 60) + " мин", "—"];
+      case "strup": return [p.mode === "dir" ? "направление" : "цвета", KG.fmt(r.value) + " с", r.errors];
+    }
+    return ["", r.value, "—"];
+  }
+
+  KG.route(/^\/kabinet\/progress$/, () => {
+    const q = new URLSearchParams(location.hash.split("?")[1] || "");
+    const type = q.get("type") || "", period = q.get("period") || "all";
+    const since = period === "all" ? "" : dayKey(new Date(Date.now() - (period === "7" ? 6 : 29) * 864e5));
+    const list = state.results.filter(r => (!type || r.type === type) && r.day >= since).slice().reverse();
+    const sizes = [3, 4, 5, 6, 7].filter(n => KG.resultsOf("shulte", { size: n }).length >= 2);
+    const shSize = +(q.get("size") || sizes[0] || 5);
+    const sh = KG.resultsOf("shulte", { size: shSize }).filter(r => r.valid);
+    const math = state.results.filter(r => r.type === "logika" && r.params.mode === "math");
+    const short = r => new Date(r.date).toLocaleDateString("ru-RU", { day: "numeric", month: "short" });
+    return { title: "Статистика", html: `
+      <h1>Статистика и история</h1>${cabTabs("/progress")}
+      <div class="grid g2">
+        <div class="card"><h3>Таблица Шульте, время (с)</h3>
+          ${sizes.length > 1 ? `<div class="tags" style="margin-bottom:8px">${sizes.map(n => `<a class="tag" style="text-decoration:none;${n === shSize ? "background:var(--accent);color:var(--on-accent)" : ""}" href="#/kabinet/progress?size=${n}">${n}×${n}</a>`).join("")}</div>` : ""}
+          ${lineChart(sh.map(r => ({ y: Math.round(r.value * 10) / 10, label: fmtDate(r.date), short: short(r) })), { label: "Время в таблице Шульте " + shSize + "×" + shSize, unit: "с" })}</div>
+        <div class="card"><h3>Устный счёт, верных за минуту</h3>
+          ${lineChart(math.map(r => ({ y: r.value, label: fmtDate(r.date), short: short(r) })), { label: "Результаты устного счёта", unit: "отв." })}</div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3>История тренировок</h3>
+        <form class="options" id="hist-f" style="border:none;padding:0;background:none">
+          <label class="field">Тренажёр<select name="type"><option value="">Все</option>${KG.TRAINERS.map(t => `<option value="${t.slug}" ${t.slug === type ? "selected" : ""}>${t.title}</option>`).join("")}</select></label>
+          <label class="field">Период<select name="period"><option value="7" ${period === "7" ? "selected" : ""}>7 дней</option><option value="30" ${period === "30" ? "selected" : ""}>30 дней</option><option value="all" ${period === "all" ? "selected" : ""}>Всё время</option></select></label>
+        </form>
+        ${list.length ? `<div class="table-wrap"><table><thead><tr><th>Дата</th><th>Тренажёр</th><th>Параметры</th><th>Результат</th><th>Ошибки</th></tr></thead><tbody>
+          ${list.slice(0, 100).map(r => { const [p, v, e] = describe(r); return `<tr><td>${new Date(r.date).toLocaleString("ru-RU", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</td><td>${TYPE_NAMES[r.type]}</td><td>${esc(p)}</td><td>${esc(v)}${r.valid ? "" : ' <span class="meta">(недостоверно)</span>'}</td><td>${e}</td></tr>`; }).join("")}
+        </tbody></table></div>` : `<p class="muted">Пока нет тренировок за этот период. <a href="#/trenazhery">Начать</a></p>`}
+      </div>`,
+      mount(app) {
+        app.querySelector("#hist-f").addEventListener("change", e => {
+          const f = new FormData(e.currentTarget);
+          location.hash = "#/kabinet/progress?type=" + f.get("type") + "&period=" + f.get("period");
+        });
+      } };
+  });
+
+  KG.route(/^\/kabinet\/dostizheniya$/, () => ({ title: "Достижения", html: `
+    <h1>Достижения</h1>${cabTabs("/dostizheniya")}
+    <p class="muted">Получено ${state.achievements.length} из ${KG.ACHIEVEMENTS.length}</p>
+    <div class="grid g2">${KG.ACHIEVEMENTS.map(a => { const got = state.achievements.includes(a.id); return `<div class="card ach${got ? "" : " locked"}"><div class="ach-ico">${icon(got ? "award" : "lock", 26)}</div><div><b>${a.title}</b><br><span class="muted">${a.desc}</span>${got ? "<br><small>Получено</small>" : ""}</div></div>`; }).join("")}</div>` }));
+
+  KG.route(/^\/kabinet\/nastroiki$/, () => ({ title: "Настройки", html: `
+    <h1>Настройки</h1>${cabTabs("/nastroiki")}
+    <div class="grid g2">
+      <form class="card" id="prof-f"><h3>Профиль</h3>
+        <label class="field" style="margin-bottom:12px">Имя<input type="text" name="name" value="${esc(state.profile.name)}" maxlength="40" autocomplete="given-name"></label>
+        <label class="field" style="margin-bottom:12px">Цель, слов/мин<input type="number" name="goal" value="${state.profile.goal}" min="100" max="1500" step="10"></label>
+        <label class="field" style="margin-bottom:16px">Тема<select name="theme"><option value="system" ${state.theme === "system" ? "selected" : ""}>Как в системе</option><option value="light" ${state.theme === "light" ? "selected" : ""}>Светлая</option><option value="dark" ${state.theme === "dark" ? "selected" : ""}>Тёмная</option></select></label>
+        <button class="btn">Сохранить</button></form>
+      <div class="card"><h3>Мои данные</h3>
+        <p class="muted">Скачайте все результаты в JSON или удалите их из этого браузера.</p>
+        <div class="btn-row"><button class="btn ghost" id="export">Выгрузить данные (JSON)</button><button class="btn ghost" id="wipe">Удалить все данные</button></div>
+        <p class="meta" style="margin-top:16px">Согласие на cookies: ${state.cookie === "all" ? "все" : state.cookie === "necessary" ? "только необходимые" : "не выбрано"}. <button class="btn small ghost" id="cookie-reset" style="margin-left:8px">Изменить</button></p>
+      </div>
+    </div>`,
+    mount(app) {
+      app.querySelector("#prof-f").onsubmit = e => {
+        e.preventDefault(); const f = new FormData(e.target);
+        state.profile.name = String(f.get("name")).trim();
+        state.profile.goal = Math.min(1500, Math.max(100, +f.get("goal") || 400));
+        state.theme = f.get("theme"); save(); applyTheme(); toast("Сохранено");
+      };
+      app.querySelector("#export").onclick = () => {
+        const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+        const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "knizhnaya-gostinaya-data.json"; a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      };
+      app.querySelector("#wipe").onclick = () => { if (confirm("Удалить все результаты, прогресс курса и настройки из этого браузера? Действие необратимо.")) { KG.resetAll(); toast("Данные удалены"); go(); } };
+      app.querySelector("#cookie-reset").onclick = () => { state.cookie = null; save(); cookieBanner(); };
+    } }));
+
+  /* Вход / регистрация — заглушка до серверного этапа (MVP-2) */
+  const authStub = title => () => ({ title, html: `<div class="narrow" style="margin:0 auto;max-width:520px">
+    <h1>${title}</h1>
+    <div class="card">
+      <p>Регистрация и вход по email, через Яндекс ID и Google появятся на этапе MVP-2 вместе с сервером: тогда результаты будут синхронизироваться между устройствами.</p>
+      <p class="muted">Сейчас все тренажёры и курс доступны без регистрации, а прогресс сохраняется в этом браузере. При регистрации его можно будет перенести в аккаунт.</p>
+      <div class="btn-row"><a class="btn" href="#/kabinet">Открыть кабинет гостя</a><a class="btn ghost" href="#/trenazhery">К тренажёрам</a></div>
+    </div></div>` });
+  KG.route(/^\/vhod$/, authStub("Вход"));
+  KG.route(/^\/registratsiya$/, authStub("Регистрация"));
+  KG.route(/^\/vosstanovlenie$/, authStub("Восстановление пароля"));
+
+  KG.route(/^\/o-proekte$/, () => ({ title: "О проекте", html: `<div class="narrow" style="margin:0 auto">
+    <div class="breadcrumbs"><a href="#/">Главная</a> / О проекте</div><h1>О проекте</h1>
+    <article class="prose"><p>«Книжная гостиная» — сайт для взрослых, которые хотят читать быстрее, лучше запоминать прочитанное и держать мозг в тонусе.</p>
+    <p>Мы объединили пошаговый курс скорочтения, короткие тренажёры и статистику прогресса. Тренировки занимают 5–15 минут: их легко встроить в обеденный перерыв или вечер с книгой.</p>
+    <h2>Что внутри</h2><ul><li>Курс из 10 уроков с практическими заданиями.</li><li>7 тренажёров: Шульте, тест скорости, ребусы, карточки, логика, нейрогимнастика, Струп-тест.</li><li>Серия дней, достижения и графики прогресса.</li></ul>
+    <p>Все тексты на сайте написаны для проекта.</p></article></div>` }));
+
+  KG.route(/^\/politika$/, () => ({ title: "Политика конфиденциальности", html: `<div class="narrow" style="margin:0 auto"><h1>Политика конфиденциальности</h1>
+    <article class="prose"><p><i>Черновик. Итоговый текст утверждает юрист после выбора целевого рынка (PRD, раздел 8).</i></p>
+    <h2>Какие данные мы храним</h2><p>В текущей версии сайт не передаёт ваши данные на сервер. Результаты тренировок, прогресс курса и настройки хранятся в локальном хранилище вашего браузера.</p>
+    <h2>Аналитика</h2><p>Счётчики аналитики запускаются только после того, как вы нажали «Принять все» в баннере cookies.</p>
+    <h2>Как удалить данные</h2><p>Откройте Кабинет → Настройки → «Удалить все данные» или очистите данные сайта в браузере.</p></article></div>` }));
+
+  KG.route(/^\/soglasie$/, () => ({ title: "Согласие на обработку персональных данных", html: `<div class="narrow" style="margin:0 auto"><h1>Согласие на обработку персональных данных</h1>
+    <article class="prose"><p><i>Черновик. Текст согласия будет утверждён юристом и показан отдельной галочкой при регистрации.</i></p>
+    <p>Регистрируясь на сайте, пользователь даёт согласие на обработку email, имени, часового пояса и результатов тренировок в целях предоставления сервиса, отправки писем о подтверждении и напоминаний.</p></article></div>` }));
+
+  function notFound() {
+    return { title: "Страница не найдена", html: `<div style="text-align:center;padding:48px 0">
+      <div style="color:var(--rose)">${icon("book", 96)}</div>
+      <h1>Страница не найдена</h1><p class="muted">Похоже, эту страницу вырвали из книги. Попробуйте начать с главной.</p>
+      <a class="btn" href="#/">На главную</a></div>` };
+  }
+
+  /* ---------- Запуск ---------- */
+  document.addEventListener("DOMContentLoaded", () => {
+    layout();
+    window.addEventListener("hashchange", go);
+    matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+    go();
+  });
+})();
+
+</script>
+  <script>
+/* Тренажёры (PRD 6.5). Общий каркас + 7 реализаций. */
+(function () {
+  const KG = window.KG, esc = KG.esc, fmt = KG.fmt, icon = KG.icon;
+
+  function Timer() {
+    let acc = 0, t0 = null;
+    return {
+      start() { acc = 0; t0 = performance.now(); },
+      pause() { if (t0 != null) { acc += performance.now() - t0; t0 = null; } },
+      resume() { if (t0 == null) t0 = performance.now(); },
+      sec() { return (acc + (t0 != null ? performance.now() - t0 : 0)) / 1000; }
+    };
+  }
+
+  function shell(slug, howto, optionsHtml, extra) {
+    const t = KG.TRAINERS.find(x => x.slug === slug);
+    const seen = KG.state().howtoSeen[slug];
+    return `<div class="trainer">
+      <div class="breadcrumbs"><a href="#/">Главная</a> / <a href="#/trenazhery">Тренажёры</a> / ${t.title}</div>
+      <h1>${t.title}</h1>
+      <details class="howto" ${seen ? "" : "open"}><summary>Как заниматься</summary><div>${howto}</div></details>
+      ${optionsHtml ? `<form class="options" id="opts" onsubmit="return false">${optionsHtml}</form>` : ""}
+      <div class="trainer-bar">
+        <div class="btn-row">
+          <button class="btn" id="b-start">Старт</button>
+          ${extra && extra.noPause ? "" : `<button class="btn ghost" id="b-pause" disabled>Пауза</button>`}
+          <button class="btn ghost" id="b-restart" disabled>Заново</button>
+        </div>
+      </div>
+      <div class="stage-box" id="stage"><p class="muted" style="text-align:center;margin-top:60px">Выберите настройки и нажмите «Старт».</p></div>
+      <div class="sr-only" aria-live="polite" id="live"></div>
+    </div>`;
+  }
+
+  /* Общий контроллер: Старт / Пауза / Заново, экран результата. */
+  function control(app, slug, impl) {
+    const startB = app.querySelector("#b-start"), pauseB = app.querySelector("#b-pause"), restartB = app.querySelector("#b-restart");
+    const stage = app.querySelector("#stage"), live = app.querySelector("#live"), opts = app.querySelector("#opts");
+    let status = "idle", overlay = null, snap = {};
+    const setOpts = dis => opts && opts.querySelectorAll("input,select").forEach(i => { i.disabled = dis || i.dataset.locked === "1"; });
+    const ctx = {
+      stage, live, status: () => status,
+      say(msg) { live.textContent = ""; setTimeout(() => live.textContent = msg, 30); },
+      opts() { return snap; },
+      check(name) { const el = opts && opts.querySelector(`[name="${name}"]`); return !!(el && el.checked); },
+      finish(res) {
+        status = "done"; impl.stop && impl.stop();
+        if (pauseB) pauseB.disabled = true;
+        startB.textContent = "Старт"; setOpts(false);
+        const st = KG.state(); st.howtoSeen[slug] = true; KG.save();
+        if (res.save) KG.addResult(res.save);
+        const idx = KG.TRAINERS.findIndex(t => t.slug === slug), next = KG.TRAINERS[(idx + 1) % KG.TRAINERS.length];
+        stage.innerHTML = `<div class="result">
+          <p class="muted" style="margin:0">${res.label}</p>
+          <div class="big">${res.big}</div>
+          ${res.grid ? `<div class="result-grid">${res.grid.map(([l, v]) => `<div><span class="meta">${l}</span><b>${v}</b></div>`).join("")}</div>` : ""}
+          ${res.note ? `<p>${res.note}</p>` : ""}
+          ${res.html || ""}
+          <div class="btn-row" style="justify-content:center"><button class="btn" id="r-again">Ещё раз</button><a class="btn ghost" href="#/trenazhery/${next.slug}">Следующий: ${next.title}</a></div>
+          <p class="guest-note">Результат сохранён в этом браузере и виден в <a href="#/kabinet">кабинете</a>.</p></div>`;
+        ctx.say(res.label + ": " + res.big);
+        stage.querySelector("#r-again").onclick = () => startB.click();
+        restartB.disabled = true;
+      }
+    };
+    startB.onclick = () => {
+      if (status === "running" || status === "paused") return;
+      if (overlay) { overlay.remove(); overlay = null; }
+      snap = opts ? Object.fromEntries(new FormData(opts).entries()) : {};
+      status = "running"; setOpts(true);
+      if (pauseB) { pauseB.disabled = false; pauseB.textContent = "Пауза"; }
+      restartB.disabled = false;
+      KG.track("training_start", { trainer: slug, params: ctx.opts() });
+      impl.start(ctx);
+    };
+    if (pauseB) pauseB.onclick = () => {
+      if (status === "running") {
+        status = "paused"; impl.pause && impl.pause();
+        overlay = document.createElement("div"); overlay.className = "paused"; overlay.textContent = "Пауза";
+        stage.appendChild(overlay); pauseB.textContent = "Продолжить"; ctx.say("Пауза");
+      } else if (status === "paused") {
+        status = "running"; overlay && overlay.remove(); overlay = null;
+        impl.resume && impl.resume(); pauseB.textContent = "Пауза";
+      }
+    };
+    restartB.onclick = () => {
+      impl.stop && impl.stop();
+      if (overlay) { overlay.remove(); overlay = null; }
+      status = "idle"; setOpts(false); startB.click();
+    };
+    KG.cleanup = () => { impl.stop && impl.stop(); };
+    return ctx;
+  }
+
+  function compare(cur, prev, best, lowerBetter, unit, digits) {
+    const f = v => (digits ? fmt(v, digits) : Math.round(v)) + " " + unit;
+    const rows = [];
+    rows.push(["Прошлый результат", prev ? f(prev.value) : "—"]);
+    rows.push(["Лучший результат", best ? f(best.value) : "—"]);
+    let note = "";
+    if (!best) note = "Это ваш первый результат в этом режиме.";
+    else if (lowerBetter ? cur < best.value : cur > best.value) note = "🎉 Новый рекорд!";
+    return { rows, note };
+  }
+
+  /* ================= Таблица Шульте ================= */
+  const ABC = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+  KG.route(/^\/trenazhery\/shulte$/, () => ({
+    title: "Таблица Шульте",
+    html: shell("shulte",
+      `<p>Находите элементы по порядку, нажимая на клетки. Смотрите в центр таблицы и ищите боковым зрением — так расширяется поле зрения.</p>
+       <p><b>Шульте–Горбова:</b> чередуйте чёрные числа по возрастанию и красные (подчёркнутые) по убыванию: чёрное 1, красное максимальное, чёрное 2…</p>`,
+      `<label class="field">Размер<select name="size">${[3, 4, 5, 6, 7].map(n => `<option value="${n}" ${n === 5 ? "selected" : ""}>${n}×${n}</option>`).join("")}</select></label>
+       <label class="field">Режим<select name="mode"><option value="asc">Числа по порядку</option><option value="desc">Обратный отсчёт</option><option value="letters">Буквы (до 5×5)</option><option value="gorbov">Шульте–Горбова</option></select></label>
+       <label class="check"><input type="checkbox" name="shuffle"> Перемешивать после нажатия</label>
+       <label class="check"><input type="checkbox" name="highlight" checked> Подсвечивать найденные</label>
+       <label class="check"><input type="checkbox" name="dot"> Точка фиксации</label>`),
+    mount(app) {
+      const opts = app.querySelector("#opts");
+      const sync = () => {
+        const letters = opts.mode.value === "letters";
+        [...opts.size.options].forEach(o => { o.disabled = letters && +o.value > 5; });
+        if (letters && +opts.size.value > 5) opts.size.value = "5";
+      };
+      opts.mode.addEventListener("change", sync);
+
+      let timer, raf, cells, seq, pos, errors, N, mode, o;
+      const impl = {
+        start(ctx) {
+          o = ctx.opts(); N = +o.size; mode = o.mode;
+          const total = N * N;
+          if (mode === "gorbov") {
+            const B = Math.ceil(total / 2), R = Math.floor(total / 2);
+            cells = [];
+            for (let i = 1; i <= B; i++) cells.push({ label: String(i), kind: "black", v: i });
+            for (let i = 1; i <= R; i++) cells.push({ label: String(i), kind: "red", v: i });
+            const blacks = cells.filter(c => c.kind === "black"), reds = cells.filter(c => c.kind === "red").sort((a, b) => b.v - a.v);
+            seq = [];
+            for (let i = 0; i < B; i++) { seq.push(blacks[i]); if (reds[i]) seq.push(reds[i]); }
+          } else {
+            cells = [];
+            for (let i = 0; i < total; i++) cells.push({ label: mode === "letters" ? ABC[i] : String(i + 1), kind: "", v: i });
+            seq = mode === "desc" ? cells.slice().reverse() : cells.slice();
+          }
+          cells = KG.shuffle(cells); pos = 0; errors = 0;
+          ctx.stage.innerHTML = `<div class="hud"><div><span>Время</span><b id="h-time">0,0</b></div><div><span>Ошибки</span><b id="h-err">0</b></div></div>
+            <div class="next-hint" id="h-next"></div>
+            <div class="schulte" id="grid" style="grid-template-columns:repeat(${N},1fr)"></div>`;
+          this.ctx = ctx;
+          draw(); hint();
+          timer = Timer(); timer.start();
+          const tick = () => { const el = document.getElementById("h-time"); if (el) el.textContent = fmt(timer.sec()); raf = requestAnimationFrame(tick); };
+          raf = requestAnimationFrame(tick);
+        },
+        pause() { timer.pause(); },
+        resume() { timer.resume(); },
+        stop() { cancelAnimationFrame(raf); }
+      };
+      const ctx = control(app, "shulte", impl);
+
+      function label(c) { return mode === "gorbov" ? (c.kind === "red" ? "красное " : "чёрное ") + c.label : c.label; }
+      function hint() {
+        const h = document.getElementById("h-next"), c = seq[pos];
+        if (h && c) h.innerHTML = `Найдите: <b class="${c.kind === "red" ? "" : ""}" style="${c.kind === "red" ? "color:var(--err);text-decoration:underline" : ""}">${esc(c.label)}</b>${mode === "gorbov" ? ` <span class="meta">(${c.kind === "red" ? "красное" : "чёрное"})</span>` : ""}`;
+      }
+      function draw() {
+        const g = document.getElementById("grid");
+        g.innerHTML = cells.map((c, i) => {
+          const found = seq.indexOf(c) < pos;
+          return `<button data-i="${i}" class="${c.kind} ${found && o.highlight ? "found" : ""}" aria-label="${esc(label(c))}${found ? ", найдено" : ""}">${esc(c.label)}</button>`;
+        }).join("") + (o.dot ? `<span class="dot" aria-hidden="true"></span>` : "");
+        g.onclick = e => {
+          const b = e.target.closest("button"); if (!b || ctx.status() !== "running") return;
+          const c = cells[+b.dataset.i];
+          if (c === seq[pos]) {
+            pos++;
+            if (pos === seq.length) return done();
+            if (o.shuffle) { cells = KG.shuffle(cells); draw(); g.querySelector("button")?.focus(); }
+            else if (o.highlight) { b.classList.add("found"); }
+            hint();
+          } else if (seq.indexOf(c) >= pos) {
+            errors++; document.getElementById("h-err").textContent = errors;
+            b.classList.add("flash"); setTimeout(() => b.classList.remove("flash"), 250);
+            ctx.say("Ошибка. Ищите " + label(seq[pos]));
+          }
+        };
+      }
+      function done() {
+        const t = timer.sec(); impl.stop();
+        const params = { size: N, mode };
+        const prevList = KG.resultsOf("shulte", params), prev = prevList[prevList.length - 1];
+        const best = KG.best("shulte", params, true);
+        const cmp = compare(t, prev, best, true, "с", 1);
+        ctx.finish({
+          label: `Таблица ${N}×${N} пройдена`, big: fmt(t) + " с",
+          grid: [["Ошибки", errors], ...cmp.rows], note: cmp.note,
+          save: { type: "shulte", params, value: Math.round(t * 10) / 10, unit: "с", errors }
+        });
+      }
+    }
+  }));
+
+  /* ================= Тест скорости чтения ================= */
+  KG.route(/^\/trenazhery\/skorost$/, () => ({
+    title: "Тест скорости чтения",
+    html: shell("skorost",
+      `<p>Нажмите «Старт», прочитайте текст в привычном темпе, стараясь понять смысл, и нажмите «Прочитал(а)». Затем ответьте на 5 вопросов.</p>
+       <p>Пауза в тесте недоступна. Если уйти со вкладки дольше чем на 10 секунд, попытка не попадёт в статистику.</p>
+       <p class="meta">Эффективная скорость = слова в минуту × процент понимания.</p>`,
+      `<label class="field">Сложность<select name="level"><option>лёгкий</option><option>средний</option><option>сложный</option></select></label>`,
+      { noPause: true }),
+    mount(app) {
+      let timer, text, hiddenAt = null, awayLong = false, onVis;
+      const impl = {
+        start(ctx) {
+          const st = KG.state(), level = ctx.opts().level;
+          const pool = KG.SPEED_TEXTS.filter(t => t.level === level);
+          let fresh = pool.filter(t => !st.speedSeen.includes(t.id));
+          if (!fresh.length) { st.speedSeen = st.speedSeen.filter(id => !pool.some(t => t.id === id)); fresh = pool; }
+          text = fresh[Math.floor(Math.random() * fresh.length)];
+          awayLong = false;
+          const words = KG.words(text.text);
+          ctx.stage.innerHTML = `<p class="meta" style="text-align:center">«${esc(text.title)}» · ${words} слов · уровень: ${text.level}</p>
+            <div class="reading-text">${text.text.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join("")}</div>
+            <div style="text-align:center;margin-top:24px"><button class="btn" id="b-read">Прочитал(а)</button></div>`;
+          window.scrollTo({ top: ctx.stage.getBoundingClientRect().top + scrollY - 80 });
+          timer = Timer(); timer.start();
+          onVis = () => {
+            if (document.hidden) hiddenAt = performance.now();
+            else if (hiddenAt != null) { if (performance.now() - hiddenAt > 10000) awayLong = true; hiddenAt = null; }
+          };
+          document.addEventListener("visibilitychange", onVis);
+          ctx.stage.querySelector("#b-read").onclick = () => quiz(ctx, words);
+        },
+        stop() { if (onVis) document.removeEventListener("visibilitychange", onVis); }
+      };
+      control(app, "skorost", impl);
+
+      function quiz(ctx, words) {
+        const sec = timer.sec(); impl.stop();
+        ctx.stage.innerHTML = `<h2 style="text-align:center">Вопросы на понимание</h2><p class="meta" style="text-align:center">Текст скрыт. Отвечайте по памяти.</p>
+          <form id="quiz">${text.questions.map((q, i) => `<div class="quiz-q"><fieldset><legend>${i + 1}. ${esc(q.q)}</legend>
+            ${q.o.map((o, j) => `<label class="opt"><input type="radio" name="q${i}" value="${j}" required> ${esc(o)}</label>`).join("")}</fieldset></div>`).join("")}
+          <div style="text-align:center"><button class="btn">Узнать результат</button></div></form>`;
+        window.scrollTo({ top: ctx.stage.getBoundingClientRect().top + scrollY - 80 });
+        ctx.stage.querySelector("#quiz").onsubmit = e => {
+          e.preventDefault();
+          const f = new FormData(e.target);
+          const right = text.questions.filter((q, i) => +f.get("q" + i) === q.a).length;
+          const wpm = Math.round(words / (sec / 60));
+          const comp = right / 5 * 100;
+          const eff = Math.round(wpm * comp / 100);
+          let valid = !awayLong, reason = awayLong ? "Вы уходили со вкладки дольше 10 секунд — попытка не учитывается в статистике." : "";
+          if (wpm > 1500 && comp < 40) { valid = false; reason = "Очень высокая скорость при низком понимании — попытка помечена как вероятно недостоверная."; }
+          const st = KG.state(); if (!st.speedSeen.includes(text.id)) st.speedSeen.push(text.id); KG.save();
+          const prevList = KG.resultsOf("skorost").filter(r => r.valid), prev = prevList[prevList.length - 1];
+          const best = KG.best("skorost", null, false);
+          const cmp = compare(eff, prev, best, false, "сл/мин");
+          const review = `<details class="howto" style="text-align:left;margin:16px 0"><summary>Разбор ответов</summary><div>${text.questions.map((q, i) => {
+            const u = +f.get("q" + i), ok = u === q.a;
+            return `<p><b>${i + 1}. ${esc(q.q)}</b><br>${ok ? "✓" : "✗"} Ваш ответ: ${esc(q.o[u])}${ok ? "" : `<br>Правильно: ${esc(q.o[q.a])}`}</p>`;
+          }).join("")}</div></details>`;
+          ctx.finish({
+            label: "Эффективная скорость", big: eff + " сл/мин",
+            grid: [["Скорость", wpm + " сл/мин"], ["Понимание", Math.round(comp) + "%"], ["Время", fmt(sec) + " с"], ...cmp.rows],
+            note: valid ? cmp.note : `<span style="color:var(--err)">${reason}</span>`,
+            html: review,
+            save: { type: "skorost", params: { level: text.level, text: text.id }, value: eff, unit: "сл/мин", extra: { wpm, comp: Math.round(comp), sec: Math.round(sec) }, valid }
+          });
+        };
+      }
+    }
+  }));
+
+  /* ================= Ребусы ================= */
+  const norm = s => s.toLowerCase().replace(/ё/g, "е").replace(/[^a-zа-я0-9]/g, "");
+  KG.route(/^\/trenazhery\/rebusy$/, () => ({
+    title: "Ребусы",
+    html: shell("rebusy",
+      `<p>В ребусе слово зашифровано буквами и числами: например, «100Л» — это «стол». Введите ответ и нажмите «Проверить».</p>
+       <p>Очки: 3 без подсказок, 2 с одной подсказкой, 1 с двумя и более, 0 — если открыть ответ.</p>`,
+      `<label class="field">Сложность<select name="level"><option>лёгкий</option><option>средний</option><option>сложный</option></select></label>`),
+    mount(app) {
+      let list, i, score, hints, timer;
+      const impl = {
+        start(ctx) {
+          list = KG.shuffle(KG.REBUSES.filter(r => r.level === ctx.opts().level)); i = 0; score = 0;
+          timer = Timer(); timer.start(); this.ctx = ctx; show(ctx);
+        },
+        pause() { timer.pause(); }, resume() { timer.resume(); }
+      };
+      const ctx = control(app, "rebusy", impl);
+      function show(ctx) {
+        const r = list[i]; hints = 0;
+        ctx.stage.innerHTML = `<div class="hud"><div><span>Ребус</span><b>${i + 1} / ${list.length}</b></div><div><span>Очки</span><b>${score}</b></div></div>
+          <div class="rebus" role="img" aria-label="Ребус: ${esc(r.alt)}">${esc(r.show)}</div>
+          <form id="rf" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <label class="sr-only" for="ans">Ответ</label>
+            <input id="ans" class="field" style="font:inherit;font-size:18px;min-height:44px;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);min-width:220px" autocomplete="off" placeholder="Ваш ответ">
+            <button class="btn">Проверить</button>
+          </form>
+          <div class="btn-row" style="justify-content:center;margin-top:12px"><button class="btn small ghost" id="hint">Подсказка</button><button class="btn small ghost" id="show">Показать ответ</button></div>
+          <div class="feedback" id="fb" aria-live="polite"></div>`;
+        const ans = ctx.stage.querySelector("#ans"), fb = ctx.stage.querySelector("#fb"), word = r.answers[0];
+        ans.focus();
+        ctx.stage.querySelector("#hint").onclick = () => {
+          hints = Math.min(hints + 1, word.length - 1);
+          fb.className = "feedback"; fb.textContent = "Начинается на: " + word.slice(0, hints).toUpperCase() + "…";
+        };
+        ctx.stage.querySelector("#show").onclick = () => next(ctx, 0, "Ответ: " + word);
+        ctx.stage.querySelector("#rf").onsubmit = e => {
+          e.preventDefault();
+          if (r.answers.some(a => norm(a) === norm(ans.value))) next(ctx, hints === 0 ? 3 : hints === 1 ? 2 : 1, "Верно! «" + word + "»");
+          else { fb.className = "feedback bad"; fb.textContent = "✗ Пока нет, попробуйте ещё"; ctx.say("Неверно"); }
+        };
+      }
+      function next(ctx, pts, msg) {
+        score += pts;
+        const fb = ctx.stage.querySelector("#fb");
+        fb.className = "feedback " + (pts ? "ok" : "bad"); fb.textContent = (pts ? "✓ " : "") + msg + (pts ? ` +${pts}` : "");
+        ctx.stage.querySelectorAll("button,input").forEach(b => b.disabled = true);
+        setTimeout(() => {
+          if (ctx.status() !== "running" && ctx.status() !== "paused") return;
+          i++;
+          if (i < list.length) show(ctx);
+          else {
+            const max = list.length * 3, params = { level: list[0].level };
+            const prevList = KG.resultsOf("rebusy", params), prev = prevList[prevList.length - 1], best = KG.best("rebusy", params, false);
+            const cmp = compare(score, prev, best, false, "очк.");
+            ctx.finish({ label: "Ребусы разгаданы", big: score + " из " + max, grid: [["Время", fmt(timer.sec()) + " с"], ...cmp.rows], note: cmp.note,
+              save: { type: "rebusy", params, value: score, unit: "очк." } });
+          }
+        }, 1300);
+      }
+    }
+  }));
+
+  /* ================= Тематические карточки ================= */
+  KG.route(/^\/trenazhery\/kartochki$/, () => ({
+    title: "Тематические карточки",
+    html: shell("kartochki",
+      `<p><b>Изучение</b> — нажмите на карточку, чтобы перевернуть, и отметьте, знали ли ответ. <b>Проверка</b> — выберите правильный вариант из четырёх. <b>Запомни пары</b> — откройте две карточки, которые подходят друг другу.</p>
+       <p>Работает система Лейтнера: карточки, в которых вы ошибаетесь, показываются чаще.</p>`,
+      `<label class="field">Колода<select name="deck">${KG.DECKS.map(d => `<option value="${d.id}">${d.title}</option>`).join("")}</select></label>
+       <label class="field">Режим<select name="mode"><option value="study">Изучение</option><option value="quiz">Проверка</option><option value="pairs">Запомни пары</option></select></label>
+       <label class="field">Пар (для игры)<select name="pairs"><option>6</option><option>8</option><option>10</option></select></label>`),
+    mount(app) {
+      const st = KG.state();
+      const box = (deck, i) => st.leitner[deck + ":" + i] || 1;
+      const setBox = (deck, i, ok) => { st.leitner[deck + ":" + i] = ok ? Math.min(5, box(deck, i) + 1) : 1; KG.save(); };
+      function pickLeitner(deck, n) {
+        const idx = deck.cards.map((_, i) => i);
+        const weighted = KG.shuffle(idx).sort((a, b) => box(deck.id, a) - box(deck.id, b) + (Math.random() - .5) * 1.5);
+        return weighted.slice(0, n);
+      }
+      let timer, flips, mode, deck, order, k, right, wrong, opened, matched, lock;
+      const impl = {
+        start(ctx) {
+          const o = ctx.opts(); mode = o.mode; deck = KG.DECKS.find(d => d.id === o.deck);
+          timer = Timer(); timer.start(); right = 0; wrong = 0; k = 0;
+          if (mode === "pairs") pairs(ctx, Math.min(+o.pairs, deck.cards.length));
+          else { order = pickLeitner(deck, Math.min(10, deck.cards.length)); mode === "study" ? study(ctx) : quiz(ctx); }
+        },
+        pause() { timer.pause(); }, resume() { timer.resume(); }
+      };
+      const ctx = control(app, "kartochki", impl);
+      const hud = () => `<div class="hud"><div><span>Карточка</span><b>${k + 1} / ${order.length}</b></div><div><span>Верно</span><b>${right}</b></div><div><span>Коробка</span><b>${box(deck.id, order[k])}</b></div></div>`;
+
+      function study(ctx) {
+        const [front, back] = deck.cards[order[k]];
+        ctx.stage.innerHTML = hud() + `<div class="flip" id="flip" role="button" tabindex="0" aria-label="Карточка: ${esc(front)}. Нажмите, чтобы перевернуть"><div class="flip-inner">
+            <div class="flip-face">${esc(front)}</div><div class="flip-face back">${esc(back)}</div></div></div>
+          <div class="btn-row" style="justify-content:center;margin-top:16px" id="sb" hidden><button class="btn ghost" data-ok="0">Не знал(а)</button><button class="btn" data-ok="1">Знал(а)</button></div>`;
+        const f = ctx.stage.querySelector("#flip"), sb = ctx.stage.querySelector("#sb");
+        const turn = () => { f.classList.toggle("on"); sb.hidden = false; ctx.say(f.classList.contains("on") ? "Ответ: " + back : front); };
+        f.onclick = turn; f.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); turn(); } };
+        f.focus();
+        sb.onclick = e => {
+          const b = e.target.closest("button"); if (!b) return;
+          const ok = b.dataset.ok === "1"; ok ? right++ : wrong++; setBox(deck.id, order[k], ok);
+          if (++k < order.length) study(ctx); else finishCards(ctx, "Изучение");
+        };
+      }
+      function quiz(ctx) {
+        const [front, back] = deck.cards[order[k]];
+        const others = KG.shuffle(deck.cards.filter((_, i) => i !== order[k])).slice(0, 3).map(c => c[1]);
+        const opts = KG.shuffle([back, ...others]);
+        ctx.stage.innerHTML = hud() + `<p style="text-align:center;font-size:24px;font-weight:700;margin:16px 0 20px">${esc(front)}</p>
+          <div class="choice-grid" style="grid-template-columns:1fr;max-width:560px">${opts.map(o => `<button class="btn ghost" data-v="${esc(o)}">${esc(o)}</button>`).join("")}</div>
+          <div class="feedback" id="fb"></div>`;
+        ctx.stage.querySelector(".choice-grid").onclick = e => {
+          const b = e.target.closest("button"); if (!b || ctx.status() !== "running") return;
+          const ok = b.dataset.v === back; ok ? right++ : wrong++; setBox(deck.id, order[k], ok);
+          ctx.stage.querySelectorAll(".choice-grid button").forEach(x => { x.disabled = true; if (x.dataset.v === back) x.style.cssText = "background:var(--ok-bg);border-color:var(--ok);color:var(--fg);opacity:1"; });
+          if (!ok) b.style.cssText = "background:var(--err-bg);border-color:var(--err);color:var(--fg);opacity:1";
+          const fb = ctx.stage.querySelector("#fb"); fb.className = "feedback " + (ok ? "ok" : "bad"); fb.textContent = ok ? "✓ Верно" : "✗ Правильно: " + back;
+          ctx.say(fb.textContent);
+          setTimeout(() => { if (ctx.status() === "done" || ctx.status() === "idle") return; if (++k < order.length) quiz(ctx); else finishCards(ctx, "Проверка"); }, ok ? 800 : 1800);
+        };
+      }
+      function finishCards(ctx, m) {
+        const params = { mode: m, deck: deck.id };
+        const prevList = KG.resultsOf("kartochki", params), prev = prevList[prevList.length - 1], best = KG.best("kartochki", params, false);
+        const cmp = compare(right, prev, best, false, "верно");
+        ctx.finish({ label: m + ": " + deck.title, big: right + " из " + order.length, grid: [["Ошибки", wrong], ["Время", fmt(timer.sec()) + " с"], ...cmp.rows], note: cmp.note,
+          save: { type: "kartochki", params, value: right, unit: "из " + order.length, errors: wrong } });
+      }
+      function pairs(ctx, n) {
+        const pick = KG.shuffle(deck.cards.map((c, i) => i)).slice(0, n);
+        const tiles = KG.shuffle(pick.flatMap(i => [{ id: i, text: deck.cards[i][0] }, { id: i, text: deck.cards[i][1] }]));
+        opened = []; matched = 0; flips = 0; lock = false;
+        ctx.stage.innerHTML = `<div class="hud"><div><span>Найдено пар</span><b id="pm">0 / ${n}</b></div><div><span>Ходов</span><b id="pf">0</b></div></div>
+          <div class="pairs">${tiles.map((t, i) => `<button data-i="${i}" aria-label="Закрытая карточка ${i + 1}">?</button>`).join("")}</div>`;
+        ctx.stage.querySelector(".pairs").onclick = e => {
+          const b = e.target.closest("button"); if (!b || lock || ctx.status() !== "running" || b.classList.contains("open") || b.classList.contains("matched")) return;
+          const t = tiles[+b.dataset.i];
+          b.classList.add("open"); b.textContent = t.text; b.setAttribute("aria-label", t.text);
+          opened.push(b);
+          if (opened.length === 2) {
+            flips++; ctx.stage.querySelector("#pf").textContent = flips;
+            const [a, c] = opened, ta = tiles[+a.dataset.i], tc = tiles[+c.dataset.i];
+            if (ta.id === tc.id) {
+              a.className = c.className = "matched"; opened = []; matched++;
+              ctx.stage.querySelector("#pm").textContent = matched + " / " + n; ctx.say("Пара найдена");
+              if (matched === n) {
+                const sec = timer.sec(), params = { mode: "Пары", deck: deck.id, n };
+                const prevList = KG.resultsOf("kartochki", params), prev = prevList[prevList.length - 1], best = KG.best("kartochki", params, true);
+                const cmp = compare(sec, prev, best, true, "с", 1);
+                setTimeout(() => ctx.finish({ label: "Все пары найдены", big: fmt(sec) + " с", grid: [["Ходов", flips], ...cmp.rows], note: cmp.note,
+                  save: { type: "kartochki", params, value: Math.round(sec * 10) / 10, unit: "с", errors: flips - n } }), 500);
+              }
+            } else {
+              lock = true;
+              setTimeout(() => { [a, c].forEach(x => { x.className = ""; x.textContent = "?"; x.setAttribute("aria-label", "Закрытая карточка"); }); opened = []; lock = false; }, 900);
+            }
+          }
+        };
+      }
+    }
+  }));
+
+  /* ================= Логические задачи + устный счёт ================= */
+  KG.route(/^\/trenazhery\/logika$/, () => ({
+    title: "Логические задачи",
+    html: shell("logika",
+      `<p><b>Задачи</b> — последовательности, «найди лишнее» и текстовые задачи. После ответа показывается объяснение.</p>
+       <p><b>Устный счёт 60 секунд</b> — решите как можно больше примеров за минуту. Введите ответ и нажмите Enter.</p>`,
+      `<label class="field">Режим<select name="mode"><option value="tasks">Логические задачи</option><option value="math">Устный счёт 60 секунд</option></select></label>
+       <label class="field">Сложность<select name="level"><option>лёгкий</option><option>средний</option><option>сложный</option></select></label>`),
+    mount(app) {
+      let timer, iv, list, k, right, wrong, task, paused;
+      const impl = {
+        start(ctx) {
+          const o = ctx.opts(); right = 0; wrong = 0; k = 0; paused = false;
+          timer = Timer(); timer.start();
+          if (o.mode === "math") math(ctx, o.level); else { list = KG.shuffle(KG.LOGIC.filter(t => t.level === o.level)); tasks(ctx, o.level); }
+        },
+        pause() { timer.pause(); paused = true; }, resume() { timer.resume(); paused = false; const a = document.getElementById("m-ans"); a && a.focus(); },
+        stop() { clearInterval(iv); }
+      };
+      const ctx = control(app, "logika", impl);
+
+      function tasks(ctx, level) {
+        const t = list[k];
+        ctx.stage.innerHTML = `<div class="hud"><div><span>Задача</span><b>${k + 1} / ${list.length}</b></div><div><span>Верно</span><b>${right}</b></div></div>
+          <p style="font-size:20px;font-weight:600;text-align:center;margin:12px 0 20px">${esc(t.q)}</p>
+          <div class="choice-grid">${t.o.map((o, i) => `<button class="btn ghost" data-i="${i}">${esc(o)}</button>`).join("")}</div>
+          <div id="why"></div>`;
+        ctx.stage.querySelector(".choice-grid").onclick = e => {
+          const b = e.target.closest("button"); if (!b || ctx.status() !== "running") return;
+          const ok = +b.dataset.i === t.a; ok ? right++ : wrong++;
+          ctx.stage.querySelectorAll(".choice-grid button").forEach((x, i) => { x.disabled = true; if (i === t.a) x.style.cssText = "background:var(--ok-bg);border-color:var(--ok);color:var(--fg);opacity:1"; });
+          if (!ok) b.style.cssText = "background:var(--err-bg);border-color:var(--err);color:var(--fg);opacity:1";
+          ctx.stage.querySelector("#why").innerHTML = `<div class="card powder" style="margin-top:16px"><b class="${ok ? "" : ""}" style="color:${ok ? "var(--ok)" : "var(--err)"}">${ok ? "✓ Верно" : "✗ Неверно"}</b><p style="margin:6px 0 12px">${esc(t.why)}</p><button class="btn small" id="nx">${k + 1 < list.length ? "Следующая задача" : "Завершить"}</button></div>`;
+          ctx.say((ok ? "Верно. " : "Неверно. ") + t.why);
+          const nx = ctx.stage.querySelector("#nx"); nx.focus();
+          nx.onclick = () => {
+            if (++k < list.length) tasks(ctx, level);
+            else {
+              const params = { mode: "tasks", level };
+              const prevList = KG.resultsOf("logika", params), prev = prevList[prevList.length - 1], best = KG.best("logika", params, false);
+              const cmp = compare(right, prev, best, false, "верно");
+              ctx.finish({ label: "Логические задачи", big: right + " из " + list.length, grid: [["Время", fmt(timer.sec()) + " с"], ...cmp.rows], note: cmp.note,
+                save: { type: "logika", params, value: right, unit: "из " + list.length, errors: wrong } });
+            }
+          };
+        };
+      }
+
+      const R = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+      function gen(level) {
+        if (level === "лёгкий") { const a = R(1, 15), b = R(1, 15); if (Math.random() < .5 && a + b <= 20) return [`${a} + ${b}`, a + b]; const x = Math.max(a, b), y = Math.min(a, b); return [`${x} − ${y}`, x - y]; }
+        if (level === "средний") { const t = R(0, 2); if (t === 0) { const a = R(10, 60), b = R(5, 40); return [`${a} + ${b}`, a + b]; } if (t === 1) { const a = R(30, 100), b = R(5, 30); return [`${a} − ${b}`, a - b]; } const a = R(2, 10), b = R(2, 10); return [`${a} × ${b}`, a * b]; }
+        if (Math.random() < .5) { const a = R(11, 30), b = R(11, 20); return [`${a} × ${b}`, a * b]; }
+        const b = R(3, 15), q = R(11, 40); return [`${b * q} : ${b}`, q];
+      }
+      function math(ctx, level) {
+        let cur = gen(level), left = 60;
+        ctx.stage.innerHTML = `<div class="hud"><div><span>Осталось</span><b id="m-left">60</b></div><div><span>Верно</span><b id="m-ok">0</b></div><div><span>Ошибки</span><b id="m-err">0</b></div></div>
+          <p id="m-q" style="font-size:44px;font-weight:800;text-align:center;margin:12px 0;font-variant-numeric:tabular-nums">${cur[0]} = ?</p>
+          <form id="m-f" style="display:flex;justify-content:center;gap:10px"><label class="sr-only" for="m-ans">Ответ</label>
+            <input id="m-ans" inputmode="numeric" autocomplete="off" style="font:inherit;font-size:28px;width:160px;text-align:center;min-height:56px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg)">
+            <button class="btn">OK</button></form><div class="feedback" id="m-fb"></div>`;
+        const ans = ctx.stage.querySelector("#m-ans"); ans.focus();
+        ctx.stage.querySelector("#m-f").onsubmit = e => {
+          e.preventDefault(); if (paused || ans.value.trim() === "") return;
+          const ok = +ans.value === cur[1], fb = ctx.stage.querySelector("#m-fb");
+          ok ? right++ : wrong++;
+          fb.className = "feedback " + (ok ? "ok" : "bad"); fb.textContent = ok ? "✓" : `✗ ${cur[0]} = ${cur[1]}`;
+          ctx.stage.querySelector("#m-ok").textContent = right; ctx.stage.querySelector("#m-err").textContent = wrong;
+          cur = gen(level); ctx.stage.querySelector("#m-q").textContent = cur[0] + " = ?"; ans.value = ""; ans.focus();
+        };
+        iv = setInterval(() => {
+          left = Math.max(0, 60 - Math.floor(timer.sec()));
+          const el = document.getElementById("m-left"); if (el) el.textContent = left;
+          if (left <= 0) {
+            clearInterval(iv);
+            const params = { mode: "math", level };
+            const prevList = KG.resultsOf("logika", params), prev = prevList[prevList.length - 1], best = KG.best("logika", params, false);
+            const cmp = compare(right, prev, best, false, "отв.");
+            ctx.finish({ label: "Устный счёт: верных ответов за минуту", big: String(right), grid: [["Ошибки", wrong], ...cmp.rows], note: cmp.note,
+              save: { type: "logika", params, value: right, unit: "отв./мин", errors: wrong } });
+          }
+        }, 200);
+      }
+    }
+  }));
+
+  /* ================= Нейрогимнастика ================= */
+  KG.route(/^\/trenazhery\/neiro$/, () => ({
+    title: "Нейрогимнастика",
+    html: shell("neiro",
+      `<p>Выберите готовый комплекс или одно упражнение. Выполняйте шаги в ритме метронома: каждый удар — следующий шаг. Между упражнениями — пауза 5 секунд.</p>
+       <p>Если упражнение даётся легко, увеличьте темп.</p>`,
+      `<label class="field">Программа<select name="set">${KG.NEURO_SETS.map(s => `<option value="set:${s.id}">Комплекс «${s.title}» (${s.minutes} мин)</option>`).join("")}${KG.NEURO.map(e => `<option value="ex:${e.id}">Упражнение: ${e.title} (1 мин)</option>`).join("")}</select></label>
+       <label class="field">Темп: <span id="bpm-v">60</span> уд/мин<input type="range" name="bpm" min="40" max="120" step="5" value="60" style="min-height:44px;accent-color:var(--accent)"></label>
+       <label class="check"><input type="checkbox" name="sound" checked> Звук метронома</label>`),
+    mount(app) {
+      const opts = app.querySelector("#opts");
+      opts.bpm.addEventListener("input", () => { app.querySelector("#bpm-v").textContent = opts.bpm.value; });
+      opts.bpm.dataset.locked = "0";
+      let ac, beatIv, secIv, timer, plan, idx, phaseLeft, phase, step, title;
+      function click(strong) {
+        if (!opts.sound.checked || !ac) return;
+        const o = ac.createOscillator(), g = ac.createGain();
+        o.frequency.value = strong ? 1000 : 800; g.gain.setValueAtTime(.25, ac.currentTime); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + .06);
+        o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + .07);
+      }
+      const impl = {
+        start(ctx) {
+          const o = ctx.opts();
+          try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); ac.resume(); } catch (e) { ac = null; }
+          const [kind, id] = o.set.split(":");
+          if (kind === "set") { const s = KG.NEURO_SETS.find(x => x.id === id); title = s.title; plan = s.items.map(i => KG.NEURO.find(e => e.id === i)); var per = Math.round(s.minutes * 60 / plan.length); }
+          else { const e = KG.NEURO.find(x => x.id === id); title = e.title; plan = [e]; per = 60; }
+          this.per = per; idx = 0; timer = Timer(); timer.start();
+          runEx(ctx);
+          // Темп и звук остаются доступны во время занятия
+          opts.bpm.disabled = false; opts.sound.disabled = false;
+        },
+        pause() { timer.pause(); clearInterval(beatIv); clearInterval(secIv); },
+        resume() { timer.resume(); this.loop(this.ctx); },
+        stop() { clearInterval(beatIv); clearInterval(secIv); },
+        loop(ctx) {
+          this.ctx = ctx;
+          clearInterval(beatIv); clearInterval(secIv);
+          let lastBpm = +opts.bpm.value;
+          const beat = () => {
+            if (phase !== "ex") return;
+            step = (step + 1) % plan[idx].steps.length;
+            click(step === 0);
+            ctx.stage.querySelectorAll(".neuro-steps li").forEach((li, i) => li.classList.toggle("active", i === step));
+            const d = ctx.stage.querySelector(".metronome-dot"); if (d) { d.classList.add("on"); setTimeout(() => d.classList.remove("on"), 120); }
+          };
+          const startBeat = () => { clearInterval(beatIv); beatIv = setInterval(() => { if (+opts.bpm.value !== lastBpm) { lastBpm = +opts.bpm.value; startBeat(); } beat(); }, 60000 / lastBpm); };
+          startBeat();
+          secIv = setInterval(() => {
+            phaseLeft--;
+            const el = ctx.stage.querySelector("#n-left"); if (el) el.textContent = phaseLeft;
+            if (phaseLeft <= 0) {
+              if (phase === "ex") {
+                if (idx + 1 < plan.length) { phase = "rest"; phaseLeft = 5; showRest(ctx); }
+                else { this.stop(); finish(ctx); }
+              } else { idx++; runEx(ctx); }
+            }
+          }, 1000);
+        }
+      };
+      const ctx = control(app, "neiro", impl);
+      function runEx(ctx) {
+        const e = plan[idx]; phase = "ex"; phaseLeft = impl.per; step = -1;
+        ctx.stage.innerHTML = `<div class="hud"><div><span>Упражнение</span><b>${idx + 1} / ${plan.length}</b></div><div><span>Осталось, с</span><b id="n-left">${phaseLeft}</b></div></div>
+          <h2 style="text-align:center">${esc(e.title)}</h2><div class="metronome-dot" aria-hidden="true"></div>
+          <ol class="neuro-steps" style="max-width:520px;margin:16px auto">${e.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol>`;
+        ctx.say("Упражнение: " + e.title);
+        impl.loop(ctx);
+      }
+      function showRest(ctx) {
+        const nx = plan[idx + 1];
+        ctx.stage.innerHTML = `<div style="text-align:center;padding:40px 0"><p class="muted">Пауза</p><div class="result"><div class="big" id="n-left">5</div></div><p>Далее: <b>${esc(nx.title)}</b></p></div>`;
+        ctx.say("Пауза 5 секунд. Далее: " + nx.title);
+      }
+      function finish(ctx) {
+        const sec = Math.round(timer.sec());
+        ctx.finish({ label: "Комплекс выполнен", big: esc(title), grid: [["Упражнений", plan.length], ["Время", Math.floor(sec / 60) + " мин " + (sec % 60) + " с"]], note: "Отличная разминка! Теперь самое время почитать.",
+          save: { type: "neiro", params: { set: title }, value: sec, unit: "с" } });
+      }
+    }
+  }));
+
+  /* ================= Струп-тест ================= */
+  const COLORS = [["красный", "#C62828"], ["синий", "#1565C0"], ["зелёный", "#2E7D32"], ["фиолетовый", "#6A1B9A"]];
+  const DIRS = [["влево", "←", 180], ["вправо", "→", 0], ["вверх", "↑", -90], ["вниз", "↓", 90]];
+  KG.route(/^\/trenazhery\/strup$/, () => ({
+    title: "Струп-тест",
+    html: shell("strup",
+      `<p><b>Цвета:</b> на экране появляется название цвета, напечатанное другим цветом. Выберите <b>цвет шрифта</b>, а не слово. 30 слов за попытку.</p>
+       <p><b>Направление</b> (для людей с нарушением цветовосприятия): внутри стрелки написано направление. Выберите, куда <b>указывает стрелка</b>, а не слово.</p>
+       <p class="meta">Клавиши 1–4 соответствуют кнопкам.</p>`,
+      `<label class="field">Режим<select name="mode"><option value="color">Цвета</option><option value="dir">Направление</option></select></label>`),
+    mount(app) {
+      let timer, raf, items, k, errors, mode, keyH;
+      const impl = {
+        start(ctx) {
+          mode = ctx.opts().mode; k = 0; errors = 0;
+          const src = mode === "dir" ? DIRS : COLORS;
+          items = Array.from({ length: 30 }, () => { const w = Math.floor(Math.random() * 4); let c; do c = Math.floor(Math.random() * 4); while (c === w); return [w, c]; });
+          ctx.stage.innerHTML = `<div class="hud"><div><span>Слово</span><b id="s-k">1 / 30</b></div><div><span>Время</span><b id="s-t">0,0</b></div><div><span>Ошибки</span><b id="s-e">0</b></div></div>
+            <div id="s-show" style="background:#fff;border-radius:12px;border:1px solid var(--line)"></div>
+            <div class="choice-grid" style="margin-top:16px">${src.map((c, i) => `<button class="btn ghost" data-i="${i}"><span aria-hidden="true">${i + 1}.</span> ${mode === "dir" ? c[1] + " " + c[0] : `<span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:${c[1]}"></span> ${c[0]}`}</button>`).join("")}</div>
+            <div class="feedback" id="s-fb"></div>`;
+          draw(ctx);
+          ctx.stage.querySelector(".choice-grid").onclick = e => { const b = e.target.closest("button"); if (b) answer(ctx, +b.dataset.i); };
+          keyH = e => { if (ctx.status() === "running" && /^[1-4]$/.test(e.key)) answer(ctx, +e.key - 1); };
+          document.addEventListener("keydown", keyH);
+          timer = Timer(); timer.start();
+          const tick = () => { const el = document.getElementById("s-t"); if (el) el.textContent = fmt(timer.sec()); raf = requestAnimationFrame(tick); };
+          raf = requestAnimationFrame(tick);
+        },
+        pause() { timer.pause(); }, resume() { timer.resume(); },
+        stop() { cancelAnimationFrame(raf); document.removeEventListener("keydown", keyH); }
+      };
+      const ctx = control(app, "strup", impl);
+      function draw(ctx) {
+        const [w, c] = items[k], box = ctx.stage.querySelector("#s-show");
+        if (mode === "dir") {
+          box.innerHTML = `<div class="dir-box"><svg viewBox="0 0 200 120" role="img" aria-label="Стрелка со словом ${DIRS[w][0]}"><g transform="rotate(${DIRS[c][2]} 100 60)"><path d="M20 40h110V15l55 45-55 45V80H20z" fill="#FCE4EC" stroke="#3E2A2F" stroke-width="3"/></g><text x="100" y="68" text-anchor="middle" font-size="24" font-weight="800" fill="#3E2A2F" font-family="Manrope,sans-serif">${DIRS[w][0]}</text></svg></div>`;
+        } else box.innerHTML = `<div class="stroop-word" style="color:${COLORS[c][1]}" aria-label="Слово ${COLORS[w][0]}, цвет ${COLORS[c][0]}">${COLORS[w][0].toUpperCase()}</div>`;
+      }
+      function answer(ctx, i) {
+        if (ctx.status() !== "running") return;
+        const fb = ctx.stage.querySelector("#s-fb");
+        if (i !== items[k][1]) { errors++; ctx.stage.querySelector("#s-e").textContent = errors; fb.className = "feedback bad"; fb.textContent = "✗ Ошибка"; }
+        else { fb.className = "feedback ok"; fb.textContent = "✓"; }
+        if (++k >= items.length) {
+          const t = timer.sec(), params = { mode: mode === "dir" ? "dir" : "color" };
+          const prevList = KG.resultsOf("strup", params), prev = prevList[prevList.length - 1], best = KG.best("strup", params, true);
+          const cmp = compare(t, prev, best, true, "с", 1);
+          return ctx.finish({ label: "Струп-тест пройден", big: fmt(t) + " с", grid: [["Ошибки", errors], ...cmp.rows], note: cmp.note,
+            save: { type: "strup", params, value: Math.round(t * 10) / 10, unit: "с", errors } });
+        }
+        ctx.stage.querySelector("#s-k").textContent = (k + 1) + " / 30";
+        draw(ctx);
+      }
+    }
+  }));
+})();
+
+</script>
+</body>
+</html>
